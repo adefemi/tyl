@@ -8,18 +8,38 @@
 }
 
 .dashboard-inner{
+  width: 100%;
   .heading-dash{
     display: flex;
     color: white;
     align-items: center;
     justify-content: space-between;
+
+    .img-con{
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: white;
+      overflow: hidden;
+      img{
+        width: 45px;
+      }
+    }
     span{
       font-weight: bold;
       color: $buttonColor;
     }
 
     h3{
+      text-align: center;
       font-weight: 400;
+
+      @media screen and (max-width: 600px) {
+        font-size: 13px;
+        margin:unset;
+        text-align: left;
+        max-width: 200px;
+      }
     }
   }
 
@@ -28,6 +48,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 3em;
+
+    @media screen and (max-width: 600px){
+      grid-gap: 15px;
+    }
   }
 
   .grid-dash{
@@ -54,6 +78,8 @@
       grid-gap: 1em;
     }
 
+
+
     h5, h3{
       margin: 0;
     }
@@ -66,6 +92,41 @@
     small{
       font-size: 10px;
       color: rgba(white, 0.7);
+    }
+
+    @media screen and (max-width: 600px){
+      width: unset;
+      border-left-width: 2px;
+      display: flex;
+      flex-direction: column-reverse;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      small{
+        font-size: 8px;
+        line-height: 10px !important;
+        display: block;
+      }
+
+      h5{
+        font-size: 11px;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+
+      h3{
+        font-size: 13px;
+      }
+
+      .grid{
+        margin-top: 10px;
+      }
+
+      .currency{
+        width: 30px;
+        height: 30px;
+        margin-top: 20px;
+      }
     }
 
     &.account-balance{
@@ -129,57 +190,64 @@
     max-width: 180px;
   }
 
-  .social-link{
-    display: flex;
-    width: 100%;
-    max-width: 180px;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
+
+
+
+}
+
+
+
+.below{
+  max-width: 200px;
+  text-align: right;
+
+  color: $buttonColor;
+  font-size: 11px;
+
+  .top{
+    font-weight: 500;
     color: white;
-    margin: 0;
-    padding: 0 10px;
-    box-sizing: border-box;
-    margin-top: 20px;
 
-    img{
-      width: 18px;
+    .win{
+      color: green;
     }
-
-    .facebook{
-      img{
-        width:10px;
-      }
+    .lose{
+      color: red;
     }
   }
 
-  .below{
-    max-width: 200px;
-    text-align: right;
+  .grand{
+    font-size: 28px;
+    color: white;
+    font-weight: 600;
+  }
 
-    color: $buttonColor;
-    font-size: 11px;
-
-    .top{
-      font-weight: 500;
-      color: white;
-
-      .win{
-        color: green;
-      }
-      .lose{
-        color: red;
-      }
-    }
-
-    .grand{
-      font-size: 28px;
-      color: white;
-      font-weight: 600;
-    }
+  @media screen and (max-width: 600px) {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -50px;
   }
 }
 
+.inner-game-control{
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.play-main{
+  width: 100%;
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.btn-mobile{
+  padding: 15px 30px;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
+}
 .trans-table{
   max-height: 500px;
   overflow: auto;
@@ -189,6 +257,7 @@
     padding: 10px 20px;
     color: white;
     font-size: 13px;
+
 
     &:first-child{
       padding-left: 0;
@@ -207,6 +276,55 @@
         background-color: green;
       }
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    table{
+      display: block;
+    }
+    margin-right: 0;
+    padding-right: 0;
+    thead, tbody{
+      width: 100%;
+      display: block;
+    }
+    tr{
+      display: flex;
+      width: 100%;
+    }
+    td,th{
+      font-size: 9px;
+      padding: 10px 0;
+      flex: 1;
+      text-align: center;
+
+      .status{
+        font-size: 7px;
+        padding: 2px 0;
+        max-width: 50px;
+        margin: 0 auto;
+      }
+    }
+
+    th{
+      font-weight: 500;
+      &:nth-child(2){
+        text-align: left;
+      }
+    }
+
+    td{
+      &:nth-child(2){
+        text-align: left;
+      }
+    }
+
+    tbody{
+      tr{
+        border-bottom: 0.7px solid rgba(white, 0.1);
+      }
+    }
+
   }
 }
 

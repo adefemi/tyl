@@ -12,43 +12,67 @@
 <body>
     <div class="bg-container home-container">
        <div class="inner-container">
+           <div class="mobile ">
+               <div class="sidebar" id="sidebar">
+                   <a href="#"><div class="close"><i class="zmdi zmdi-close"></i></div></a>
+                   <div class="profile-con">
+                       <div class="img-con">
+                           <img src="./assets/support1.png" alt="">
+                       </div>
+                       <div class="details">
+                           <small>Andrew</small>
+                           <p>N10,000</p>
+                       </div>
+                   </div>
+                   <ul class="main-link">
+                       <li class="hoverer">Play</li>
+                       <li class="hoverer">Dashboard</li>
+                       <li>Wallet &nbsp;<i class="zmdi zmdi-chevron-down"></i>
+                           <div class="dropdown">
+                               <a href="/fund-wallet"><div class="drop-item">Fund Wallet</div></a>
+                               <a href="/cashout"><div class="drop-item">Cashout</div></a>
+                               <a href="/transfer"><div class="drop-item">Transfer Funds</div></a>
+                           </div>
+                       </li>
+                   </ul>
+                   <div class="sub-links">
+                       <ol>
+                           <li>How to Play</li>
+                           <li>Privacy Policy</li>
+                           <li>Responsible Gaming</li>
+                           <li>Terms and Condition</li>
+                           <li>Licenses and Permits</li>
+                           <li>Contact us</li>
+                       </ol>
+                   </div>
+                   <div class="footer">
+                       <small>Powered by</small>
+                       <img src="./assets/logo1.png" alt="">
+                       <div class="ban">18+</div>
+                   </div>
+               </div>
+
+           </div>
            <div class="heading">
                <div class="brand"><img src="./assets/logo.png" alt=""></div>
-               <ul class="navright">
-                   <a href="/game-main.html"><li><span>Play</span></li></a>
-                   <a href="/dasboard.html"><li><span>Dashboard</span></li></a>
-                   <li><span>Wallet</span>&nbsp;&nbsp;<i class="zmdi zmdi-chevron-down"></i>
-                       <div class="dropdown">
-                           <a href="/fund-wallet"><div class="drop-item">Fund Wallet</div></a>
-                           <a href="/cashout"><div class="drop-item">Cashout</div></a>
-                           <a href="/transfer"><div class="drop-item">Transfer Funds</div></a>
-                       </div>
-                   </li>
-                   <a href="/contact-us.html"><li><span>Contact</span></li></a>
-                   <li>
-                       <div class="profile">
-                           <img src="./assets/user.svg" alt="">
-                       </div>
-
-                       08023419022 &nbsp;&nbsp;<i class="zmdi zmdi-chevron-down"></i>
-                       <div class="dropdown">
-                           <a href="/profile.html"><div class="drop-item">Profile</div></a>
-                           <div class="drop-item">Logout</div>
-                       </div>
-                   </li>
-                   <li class="bal">
-                       <div class="inner">
-                           Bal.
-                           <img src="./assets/eye.svg" alt="">
-                       </div>
-                       <div class="money">N10,000</div>
-                   </li>
-               </ul>
+               <div class="desktop">
+                   <ul class="navright">
+                       <a href="/game-main.html"><li><span>Play</span></li></a>
+                       <a href="/contact-us.html"><li><span>Contact</span></li></a>
+                       <li><span>Join</span></li>
+                       <li class="signin">Sign in</li>
+                   </ul>
+               </div>
+               <div class="navright mobile">
+                   <a href="#sidebar">
+                       <img src="./assets/bar.svg" alt="">
+                   </a>
+               </div>
            </div>
            <div class="main-content won-main contact">
 
                <h2>Contact us</h2>
-               <div class="map">
+               <div class="map desktop">
                    <img src="./assets/map.png" alt="">
                </div>
                <div class="message-field">
@@ -58,19 +82,38 @@
                        <input type="text" placeholder="Phone Number">
                    </div>
                    <div class="text">
-                       <textarea name="" id="" cols="30" rows="10"></textarea>
+                       <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
                        <button>Submit</button>
                    </div>
                </div>
+               <br><br><br>
+               <div class="sharer">
+                   <p>share the good news with your friend</p>
+                   <button>Share</button>
+                   <ul class="social-link">
+                       <li class="facebook"><img src="./assets/facebook.svg" alt=""></li>
+                       <li><img src="./assets/twitter.svg" alt=""></li>
+                       <li><img src="./assets/whatsapp.svg" alt=""></li>
+                       <li><img src="./assets/mail.svg" alt=""></li>
+                   </ul>
+               </div>
            </div>
-           <div class="bottom-items-container">
-               <div class="bottom-items">how to play</div>
-               <div class="bottom-items">Terms and Conditions</div>
-               <div class="bottom-items">Responsible Gaming</div>
-               <div class="bottom-items powered">Powered by <div><img src="./assets/logo1.png" alt=""></div></div>
-               <div class="bottom-items">Privacy Policy</div>
-               <div class="bottom-items">Licenses and Permits</div>
-               <div class="bottom-items"><div class="chat">
+           <div class="desktop">
+               <div class="bottom-items-container">
+                   <div class="bottom-items">how to play</div>
+                   <div class="bottom-items">Terms and Conditions</div>
+                   <div class="bottom-items">Responsible Gaming</div>
+                   <div class="bottom-items powered">Powered by <div><img src="./assets/logo1.png" alt=""></div></div>
+                   <div class="bottom-items">Privacy Policy</div>
+                   <div class="bottom-items">Licenses and Permits</div>
+                   <div class="bottom-items"><div class="chat">
+                       <i class="zmdi zmdi-comment-more"></i>
+                   </div></div>
+               </div>
+           </div>
+
+           <div class="mobile">
+               <div class="bottom-items"><div class="chat fixed">
                    <i class="zmdi zmdi-comment-more"></i>
                </div></div>
            </div>

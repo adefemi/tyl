@@ -9,6 +9,33 @@
   background-color: #3DA7DB;
 }
 
+.input-con .info {
+  color: white;
+}
+.input-con .input-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+.input-con .input-list input {
+  width: 50px;
+  height: 50px;
+  min-width: unset;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+.input-con .input-list input:last-child {
+  margin-right: 0;
+}
+
 .game-box {
   display: flex;
   align-items: center;
@@ -24,31 +51,12 @@
   color: white;
   height: 50px;
 }
-.game-box .input-con .info {
-  color: white;
-}
-.game-box .input-con .input-list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
-.game-box .input-con .input-list input {
-  width: 50px;
-  height: 50px;
-  min-width: unset;
-  margin-right: 10px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: green;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-}
-.game-box .input-con .input-list input:last-child {
-  margin-right: 0;
+@media screen and (max-width: 600px) {
+  .game-box {
+    transform: scale(0.6);
+    margin-top: -80px;
+    margin-left: 30px;
+  }
 }
 
 .game-container {
@@ -247,6 +255,11 @@
   grid-gap: 10px;
   width: 100%;
   min-width: 200px;
+}
+@media screen and (max-width: 600px) {
+  .keys-con {
+    max-width: 200px;
+  }
 }
 .keys-con .key-item {
   background-color: white;

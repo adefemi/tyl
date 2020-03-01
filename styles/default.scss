@@ -11,6 +11,22 @@ a{
   text-decoration: none;
 }
 
+.mobile{
+  display: none !important;
+
+  @media screen and (max-width: 600px) {
+    display: block !important;
+  }
+}
+
+.desktop{
+  display: block !important;
+
+  @media screen and (max-width: 600px) {
+    display: none !important;
+  }
+}
+
 .bg-container{
   background: url("../assets/bg.png") center no-repeat;
   background-size: cover;
@@ -18,8 +34,14 @@ a{
   min-height: 768px;
   max-height: 100vh;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
+
+  @media screen and (max-width: 600px){
+    min-height: unset;
+    max-height: unset;
+    overflow: unset;
+  }
 }
 
 .inner-container{
@@ -30,6 +52,10 @@ a{
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
+  @media screen and (max-width: 600px){
+    display: block;
+  }
 }
 
 .heading{
@@ -50,6 +76,10 @@ a{
     display: flex;
     align-items: center;
     list-style: none;
+    img{
+      width: 40px;
+    }
+
     li{
       color: white;
       margin-right: 20px;
@@ -159,6 +189,14 @@ a{
   img{
     width: 100%;
   }
+
+  @media screen and (max-width: 600px) {
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    margin-top: 50px;
+  }
 }
 
 button{
@@ -166,7 +204,12 @@ button{
   border: none;
   outline: none;
   padding: 10px 30px;
+  color: white;
   border-radius: 4px;
+}
+
+h4{
+  color: white;
 }
 
 .main-content{
@@ -198,6 +241,41 @@ button{
     cursor: pointer;
     padding: 12px 30px !important;
   }
+
+  @media screen and (max-width: 600px) {
+    min-height: unset;
+    margin: 0;
+
+    h2{
+      font-size: 30px;
+      max-width: 250px;
+    }
+
+    p{
+      max-width: 300px;
+    }
+
+    button{
+      font-size: 13px;
+    }
+  }
+}
+
+.chat{
+  background-color: $buttonColor;
+  padding: 2px 10px;
+  border-radius: 50%;
+  font-size: 24px;
+  i{
+    color: white;
+  }
+
+  &.fixed{
+    position: fixed;
+    z-index: 20;
+    right: 40px;
+    bottom: 40px;
+  }
 }
 
 .bottom-items-container{
@@ -214,12 +292,7 @@ button{
     font-weight: 500;
   }
 
-  .chat{
-    background-color: $buttonColor;
-    padding: 2px 10px;
-    border-radius: 50%;
-    font-size: 24px;
-  }
+
 
   .powered{
     font-size: 9px;
@@ -313,6 +386,38 @@ button{
         font-size: 17px;
         font-weight: bold;
       }
+
+      @media screen and (max-width: 600px){
+       .heading{
+         font-size: 17px;
+       }
+
+        p{
+          text-align: center;
+          font-size: 11px;
+        }
+
+        .input-control{
+          height: 50px;
+          margin-top: 20px;
+          max-width: 250px;
+          font-size: 17px;
+        }
+
+        button{
+          padding: 15px 25px;
+          font-size: 14px;
+        }
+
+        .close{
+          top: 5vh;
+          right: 5vh;
+        }
+      }
+    }
+
+    @media screen and (max-width: 600px){
+      max-width: 80vw;
     }
   }
 
@@ -330,6 +435,11 @@ button{
     visibility: visible;
     opacity: 1;
   }
+
+  &#modalMain4:target{
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .won-main{
@@ -342,6 +452,10 @@ button{
     font-size: 35px;
     font-weight: 600;
     color: $buttonColor;
+
+    &.not{
+      color: red;
+    }
   }
 
   h2{
@@ -365,6 +479,97 @@ button{
         border: 2px solid $buttonColor;
       }
     }
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .won{
+      font-size: 27px;
+      margin-bottom: 0;
+      margin-top: 30px;
+      font-weight: bold;
+    }
+
+    h2{
+      font-size: 30px;
+      margin-top: 0px;
+    }
+
+    p{
+      max-width: 100%;
+    }
+
+    .controls{
+      button{
+        margin-right: 0;
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 15px 30px;
+
+        &:last-child{
+          margin-right: 0;
+          background-color: transparent;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+
+
+.social-link{
+  display: flex;
+  width: 100%;
+  max-width: 180px;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: white;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  img{
+    width: 18px;
+  }
+
+  .facebook{
+    img{
+      width:10px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    max-width: 120px;
+    img{
+      width: 14px;
+    }
+
+    .facebook{
+      img{
+        width:6px;
+      }
+    }
+  }
+}
+
+.sharer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+  p{
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  button{
+    color: white;
+    font-weight: bold;
   }
 }
 
@@ -413,6 +618,25 @@ button{
       width: 40px;
       margin-right: 20px;
     }
+
+    @media screen and (max-width: 600px) {
+      position: fixed;
+      z-index: 21;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 0;
+      box-sizing: border-box;
+
+      flex-direction: column;
+      height: unset;
+      padding: 20px;
+
+      img{
+        width: 30px;
+        margin: 0;
+      }
+    }
   }
 }
 
@@ -443,6 +667,29 @@ button{
     &:last-child{
       background-color: transparent;
       border: 1px solid $buttonColor;
+      color: $buttonColor;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .pic{
+      width: 70px;
+      height: 70px;
+      img{
+        width: 50px;
+      }
+    }
+
+    .name{
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    span{
+      font-size: 10px;
       color: $buttonColor;
     }
   }
@@ -538,6 +785,31 @@ button{
     flex-direction: column;
     flex: 1;
   }
+
+  @media screen and (max-width: 600px){
+    margin-top: 30px;
+
+    h2{
+      font-size: 15px;
+    }
+
+    .message-field{
+      width: unset;
+      display: block;
+      max-width: 250px;
+    }
+
+    .message-com{
+      margin-right: 0;
+    }
+
+    button{
+      max-width: 110px;
+      margin: 0 auto;
+      text-transform: none;
+      margin-top: 20px;
+    }
+  }
 }
 
 .transfer-input{
@@ -550,12 +822,23 @@ button{
   margin-top: 30px;
   padding: 0 20px ;
   box-sizing: border-box;
+  text-align: center;
+
+  @media screen  and (max-width: 600px) {
+    min-width: unset;
+    height: 50px;
+    max-width: 250px;
+  }
 }
 
 .transtart.success{
   min-width: 600px;
   background-color: #30A82B;
   height: 60px;
+
+  @media screen and (max-width: 600px) {
+    min-width: unset;
+  }
 }
 
 .tranfer{
@@ -570,5 +853,219 @@ button{
   p{
     font-size: 14px;
     max-width: 700px;
+  }
+
+  @media screen and (max-width: 600px) {
+      h2{
+        font-size: 14px;
+      }
+    p{
+      font-size: 10px;
+      max-width: 300px;
+    }
+  }
+}
+
+textarea{
+  padding: 10px;
+  font-size: 12px;
+}
+
+.sidebar{
+  position: fixed;
+  z-index: 10;
+  width: 250px;
+  background-color: #1B0F2C;
+  top: 0;
+  bottom: 0;
+  right: -250px;
+  transition: .5s ease;
+  opacity: 0;
+  visibility: hidden;
+
+  .close{
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    i{
+      font-size: 30px;
+      color: white;
+    }
+  }
+
+  .profile-con{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .img-con{
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 10px;
+
+      img{
+        width: 50px;
+      }
+    }
+
+    p{
+      margin: 0;
+      font-size: 18px;
+      color: white;
+      font-weight: 600;
+    }
+
+    small{
+      display: block;
+      font-size: 11px;
+      color: white;
+    }
+  }
+  .main-link{
+    list-style: none;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+
+    li{
+      padding: 10px 20px;
+      color: white;
+      font-size: 14px;
+
+      &.hoverer:hover{
+        background-color: $buttonColor;
+      }
+
+      .dropdown{
+        margin-top: 10px;
+        display: none;
+
+        .drop-item{
+          font-size: 12px;
+          padding: 10px 20px;
+          color: white;
+        }
+      }
+
+      &:hover{
+        .dropdown{
+          display: block;
+        }
+      }
+    }
+  }
+  .sub-links{
+    margin-top: 20px;
+    border-top: 1px solid white;
+
+    ol{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+
+      li{
+        font-size: 12px;
+        font-weight: 300;
+        color: white;
+        padding: 10px 30px;
+      }
+    }
+  }
+
+  .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    img{
+      width: 100px;
+    }
+
+    small{
+      font-size: 9px;
+      color: white;
+      font-weight: 300;
+    }
+
+    .ban{
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      color: white;
+      font-size: 12px;
+      margin-bottom: 20px;
+      background-color: $buttonColor;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+}
+
+#sidebar:target{
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.fund-wallet{
+  @media screen and (max-width: 600px) {
+    p{
+      font-size: 11px !important;
+      max-width: 150px;
+      margin: 0 auto;
+      margin-top: 30px;
+
+      span{
+        font-size: 15px;
+        font-weight: 600;
+      }
+    }
+
+    .fund-list{
+      flex-direction: column;
+
+      .fund-item{
+        margin: 0;
+        height: 65px !important;
+        width: 180px;
+        margin-bottom: 15px;
+
+        img{
+          width: 40px !important;
+        }
+      }
+    }
+  }
+}
+
+.raffle-main{
+  .mobile{
+    p{
+      text-align: center;
+      color: white;
+      margin-top: 30px;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+    .heading-dash{
+      input{
+        background-color: white;
+      }
+    }
   }
 }

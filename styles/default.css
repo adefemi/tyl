@@ -9,6 +9,24 @@ a {
   text-decoration: none;
 }
 
+.mobile {
+  display: none !important;
+}
+@media screen and (max-width: 600px) {
+  .mobile {
+    display: block !important;
+  }
+}
+
+.desktop {
+  display: block !important;
+}
+@media screen and (max-width: 600px) {
+  .desktop {
+    display: none !important;
+  }
+}
+
 .bg-container {
   background: url("../assets/bg.png") center no-repeat;
   background-size: cover;
@@ -16,8 +34,15 @@ a {
   min-height: 768px;
   max-height: 100vh;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
+}
+@media screen and (max-width: 600px) {
+  .bg-container {
+    min-height: unset;
+    max-height: unset;
+    overflow: unset;
+  }
 }
 
 .inner-container {
@@ -28,6 +53,11 @@ a {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .inner-container {
+    display: block;
+  }
 }
 
 .heading {
@@ -47,6 +77,9 @@ a {
   display: flex;
   align-items: center;
   list-style: none;
+}
+.heading .navright img {
+  width: 40px;
 }
 .heading .navright li {
   color: white;
@@ -142,13 +175,27 @@ a {
 .home-bg img {
   width: 100%;
 }
+@media screen and (max-width: 600px) {
+  .home-bg {
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+    width: 100%;
+    margin-top: 50px;
+  }
+}
 
 button {
   background-color: #3DA7DB;
   border: none;
   outline: none;
   padding: 10px 30px;
+  color: white;
   border-radius: 4px;
+}
+
+h4 {
+  color: white;
 }
 
 .main-content {
@@ -178,6 +225,38 @@ button {
   cursor: pointer;
   padding: 12px 30px !important;
 }
+@media screen and (max-width: 600px) {
+  .main-content {
+    min-height: unset;
+    margin: 0;
+  }
+  .main-content h2 {
+    font-size: 30px;
+    max-width: 250px;
+  }
+  .main-content p {
+    max-width: 300px;
+  }
+  .main-content button {
+    font-size: 13px;
+  }
+}
+
+.chat {
+  background-color: #3DA7DB;
+  padding: 2px 10px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+.chat i {
+  color: white;
+}
+.chat.fixed {
+  position: fixed;
+  z-index: 20;
+  right: 40px;
+  bottom: 40px;
+}
 
 .bottom-items-container {
   height: 150px;
@@ -191,12 +270,6 @@ button {
   cursor: pointer;
   font-size: 12px;
   font-weight: 500;
-}
-.bottom-items-container .chat {
-  background-color: #3DA7DB;
-  padding: 2px 10px;
-  border-radius: 50%;
-  font-size: 24px;
 }
 .bottom-items-container .powered {
   font-size: 9px;
@@ -286,6 +359,34 @@ button {
   font-size: 17px;
   font-weight: bold;
 }
+@media screen and (max-width: 600px) {
+  .modal-main .inner .content .heading {
+    font-size: 17px;
+  }
+  .modal-main .inner .content p {
+    text-align: center;
+    font-size: 11px;
+  }
+  .modal-main .inner .content .input-control {
+    height: 50px;
+    margin-top: 20px;
+    max-width: 250px;
+    font-size: 17px;
+  }
+  .modal-main .inner .content button {
+    padding: 15px 25px;
+    font-size: 14px;
+  }
+  .modal-main .inner .content .close {
+    top: 5vh;
+    right: 5vh;
+  }
+}
+@media screen and (max-width: 600px) {
+  .modal-main .inner {
+    max-width: 80vw;
+  }
+}
 .modal-main#modalMain:target {
   visibility: visible;
   opacity: 1;
@@ -295,6 +396,10 @@ button {
   opacity: 1;
 }
 .modal-main#modalMain3:target {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-main#modalMain4:target {
   visibility: visible;
   opacity: 1;
 }
@@ -309,6 +414,9 @@ button {
   font-size: 35px;
   font-weight: 600;
   color: #3DA7DB;
+}
+.won-main .won.not {
+  color: red;
 }
 .won-main h2 {
   font-weight: bolder;
@@ -327,6 +435,79 @@ button {
   margin-right: 0;
   background-color: transparent;
   border: 2px solid #3DA7DB;
+}
+@media screen and (max-width: 600px) {
+  .won-main .won {
+    font-size: 27px;
+    margin-bottom: 0;
+    margin-top: 30px;
+    font-weight: bold;
+  }
+  .won-main h2 {
+    font-size: 30px;
+    margin-top: 0px;
+  }
+  .won-main p {
+    max-width: 100%;
+  }
+  .won-main .controls button {
+    margin-right: 0;
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 15px 30px;
+  }
+  .won-main .controls button:last-child {
+    margin-right: 0;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.social-link {
+  display: flex;
+  width: 100%;
+  max-width: 180px;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  color: white;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+.social-link img {
+  width: 18px;
+}
+.social-link .facebook img {
+  width: 10px;
+}
+@media screen and (max-width: 600px) {
+  .social-link {
+    max-width: 120px;
+  }
+  .social-link img {
+    width: 14px;
+  }
+  .social-link .facebook img {
+    width: 6px;
+  }
+}
+
+.sharer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.sharer p {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.sharer button {
+  color: white;
+  font-weight: bold;
 }
 
 .center-mode {
@@ -371,6 +552,24 @@ button {
   width: 40px;
   margin-right: 20px;
 }
+@media screen and (max-width: 600px) {
+  .center-mode .transtart {
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    height: unset;
+    padding: 20px;
+  }
+  .center-mode .transtart img {
+    width: 30px;
+    margin: 0;
+  }
+}
 
 .profile-heading {
   display: flex;
@@ -397,6 +596,28 @@ button {
   background-color: transparent;
   border: 1px solid #3DA7DB;
   color: #3DA7DB;
+}
+@media screen and (max-width: 600px) {
+  .profile-heading {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-heading .pic {
+    width: 70px;
+    height: 70px;
+  }
+  .profile-heading .pic img {
+    width: 50px;
+  }
+  .profile-heading .name {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .profile-heading span {
+    font-size: 10px;
+    color: #3DA7DB;
+  }
 }
 
 .profile-input {
@@ -476,6 +697,28 @@ button {
   flex-direction: column;
   flex: 1;
 }
+@media screen and (max-width: 600px) {
+  .contact {
+    margin-top: 30px;
+  }
+  .contact h2 {
+    font-size: 15px;
+  }
+  .contact .message-field {
+    width: unset;
+    display: block;
+    max-width: 250px;
+  }
+  .contact .message-com {
+    margin-right: 0;
+  }
+  .contact button {
+    max-width: 110px;
+    margin: 0 auto;
+    text-transform: none;
+    margin-top: 20px;
+  }
+}
 
 .transfer-input {
   display: block;
@@ -487,12 +730,25 @@ button {
   margin-top: 30px;
   padding: 0 20px;
   box-sizing: border-box;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .transfer-input {
+    min-width: unset;
+    height: 50px;
+    max-width: 250px;
+  }
 }
 
 .transtart.success {
   min-width: 600px;
   background-color: #30A82B;
   height: 60px;
+}
+@media screen and (max-width: 600px) {
+  .transtart.success {
+    min-width: unset;
+  }
 }
 
 .tranfer {
@@ -506,6 +762,185 @@ button {
 .tranfer p {
   font-size: 14px;
   max-width: 700px;
+}
+@media screen and (max-width: 600px) {
+  .tranfer h2 {
+    font-size: 14px;
+  }
+  .tranfer p {
+    font-size: 10px;
+    max-width: 300px;
+  }
+}
+
+textarea {
+  padding: 10px;
+  font-size: 12px;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 10;
+  width: 250px;
+  background-color: #1B0F2C;
+  top: 0;
+  bottom: 0;
+  right: -250px;
+  transition: 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.sidebar .close {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+.sidebar .close i {
+  font-size: 30px;
+  color: white;
+}
+.sidebar .profile-con {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.sidebar .profile-con .img-con {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.sidebar .profile-con .img-con img {
+  width: 50px;
+}
+.sidebar .profile-con p {
+  margin: 0;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+}
+.sidebar .profile-con small {
+  display: block;
+  font-size: 11px;
+  color: white;
+}
+.sidebar .main-link {
+  list-style: none;
+  margin: 0;
+  margin-top: 30px;
+  padding: 0;
+}
+.sidebar .main-link li {
+  padding: 10px 20px;
+  color: white;
+  font-size: 14px;
+}
+.sidebar .main-link li.hoverer:hover {
+  background-color: #3DA7DB;
+}
+.sidebar .main-link li .dropdown {
+  margin-top: 10px;
+  display: none;
+}
+.sidebar .main-link li .dropdown .drop-item {
+  font-size: 12px;
+  padding: 10px 20px;
+  color: white;
+}
+.sidebar .main-link li:hover .dropdown {
+  display: block;
+}
+.sidebar .sub-links {
+  margin-top: 20px;
+  border-top: 1px solid white;
+}
+.sidebar .sub-links ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+}
+.sidebar .sub-links ol li {
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  padding: 10px 30px;
+}
+.sidebar .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.sidebar .footer img {
+  width: 100px;
+}
+.sidebar .footer small {
+  font-size: 9px;
+  color: white;
+  font-weight: 300;
+}
+.sidebar .footer .ban {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 20px;
+  background-color: #3DA7DB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sidebar:target {
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 600px) {
+  .fund-wallet p {
+    font-size: 11px !important;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  .fund-wallet p span {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .fund-wallet .fund-list {
+    flex-direction: column;
+  }
+  .fund-wallet .fund-list .fund-item {
+    margin: 0;
+    height: 65px !important;
+    width: 180px;
+    margin-bottom: 15px;
+  }
+  .fund-wallet .fund-list .fund-item img {
+    width: 40px !important;
+  }
+}
+
+.raffle-main .mobile p {
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+}
+@media screen and (max-width: 600px) {
+  .raffle-main .heading-dash input {
+    background-color: white;
+  }
 }
 
 /*# sourceMappingURL=default.css.map */

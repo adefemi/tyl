@@ -11,6 +11,36 @@
   background-color: $buttonColor;
 }
 
+.input-con{
+  .info{
+    color: white;
+  }
+
+  .input-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    input{
+      width: 50px;
+      height: 50px;
+      min-width: unset;
+      margin-right: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background-color: green;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      text-align: center;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 .game-box{
   display: flex;
   align-items: center;
@@ -28,34 +58,12 @@
     height: 50px;
   }
 
-  .input-con{
-    .info{
-      color: white;
-    }
 
-    .input-list{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 20px 0;
-      input{
-        width: 50px;
-        height: 50px;
-        min-width: unset;
-        margin-right: 10px;
-        border-radius: 10px;
-        border: none;
-        outline: none;
-        background-color: green;
-        color: white;
-        font-size: 15px;
-        font-weight: bold;
-        text-align: center;
-        &:last-child{
-          margin-right: 0;
-        }
-      }
-    }
+
+  @media screen and (max-width: 600px) {
+    transform: scale(0.6);
+    margin-top: -80px;
+    margin-left: 30px;
   }
 }
 
@@ -266,6 +274,10 @@
   grid-gap: 10px;
   width: 100%;
   min-width: 200px;
+
+  @media screen and (max-width: 600px) {
+    max-width: 200px;
+  }
 
   .key-item{
     background-color: white;

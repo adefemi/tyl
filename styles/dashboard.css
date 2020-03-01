@@ -5,24 +5,51 @@
   min-height: 70vh;
 }
 
+.dashboard-inner {
+  width: 100%;
+}
 .dashboard-inner .heading-dash {
   display: flex;
   color: white;
   align-items: center;
   justify-content: space-between;
 }
+.dashboard-inner .heading-dash .img-con {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+}
+.dashboard-inner .heading-dash .img-con img {
+  width: 45px;
+}
 .dashboard-inner .heading-dash span {
   font-weight: bold;
   color: #3DA7DB;
 }
 .dashboard-inner .heading-dash h3 {
+  text-align: center;
   font-weight: 400;
+}
+@media screen and (max-width: 600px) {
+  .dashboard-inner .heading-dash h3 {
+    font-size: 13px;
+    margin: unset;
+    text-align: left;
+    max-width: 200px;
+  }
 }
 .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
   margin-top: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
+}
+@media screen and (max-width: 600px) {
+  .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
+    grid-gap: 15px;
+  }
 }
 .dashboard-inner .grid-dash {
   width: 250px;
@@ -56,6 +83,37 @@
 .dashboard-inner .grid-dash small {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.7);
+}
+@media screen and (max-width: 600px) {
+  .dashboard-inner .grid-dash {
+    width: unset;
+    border-left-width: 2px;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .dashboard-inner .grid-dash small {
+    font-size: 8px;
+    line-height: 10px !important;
+    display: block;
+  }
+  .dashboard-inner .grid-dash h5 {
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .dashboard-inner .grid-dash h3 {
+    font-size: 13px;
+  }
+  .dashboard-inner .grid-dash .grid {
+    margin-top: 10px;
+  }
+  .dashboard-inner .grid-dash .currency {
+    width: 30px;
+    height: 30px;
+    margin-top: 20px;
+  }
 }
 .dashboard-inner .grid-dash.account-balance {
   background-color: green;
@@ -112,45 +170,54 @@
   padding: 15px 0;
   max-width: 180px;
 }
-.side .social-link {
-  display: flex;
-  width: 100%;
-  max-width: 180px;
-  align-items: center;
-  justify-content: space-between;
-  list-style: none;
-  color: white;
-  margin: 0;
-  padding: 0 10px;
-  box-sizing: border-box;
-  margin-top: 20px;
-}
-.side .social-link img {
-  width: 18px;
-}
-.side .social-link .facebook img {
-  width: 10px;
-}
-.side .below {
+
+.below {
   max-width: 200px;
   text-align: right;
   color: #3DA7DB;
   font-size: 11px;
 }
-.side .below .top {
+.below .top {
   font-weight: 500;
   color: white;
 }
-.side .below .top .win {
+.below .top .win {
   color: green;
 }
-.side .below .top .lose {
+.below .top .lose {
   color: red;
 }
-.side .below .grand {
+.below .grand {
   font-size: 28px;
   color: white;
   font-weight: 600;
+}
+@media screen and (max-width: 600px) {
+  .below {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -50px;
+  }
+}
+
+.inner-game-control {
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.play-main {
+  width: 100%;
+  max-width: 200px;
+  min-width: 200px;
+}
+
+.btn-mobile {
+  padding: 15px 30px;
+  font-size: 13px;
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold;
 }
 
 .trans-table {
@@ -178,6 +245,47 @@
 }
 .trans-table td .status.win, .trans-table th .status.win {
   background-color: green;
+}
+@media screen and (max-width: 600px) {
+  .trans-table {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .trans-table table {
+    display: block;
+  }
+  .trans-table thead, .trans-table tbody {
+    width: 100%;
+    display: block;
+  }
+  .trans-table tr {
+    display: flex;
+    width: 100%;
+  }
+  .trans-table td, .trans-table th {
+    font-size: 9px;
+    padding: 10px 0;
+    flex: 1;
+    text-align: center;
+  }
+  .trans-table td .status, .trans-table th .status {
+    font-size: 7px;
+    padding: 2px 0;
+    max-width: 50px;
+    margin: 0 auto;
+  }
+  .trans-table th {
+    font-weight: 500;
+  }
+  .trans-table th:nth-child(2) {
+    text-align: left;
+  }
+  .trans-table td:nth-child(2) {
+    text-align: left;
+  }
+  .trans-table tbody tr {
+    border-bottom: 0.7px solid rgba(255, 255, 255, 0.1);
+  }
 }
 
 select, input {
