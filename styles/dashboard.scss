@@ -8,7 +8,10 @@
 }
 
 .dashboard-inner{
-  width: 100%;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
   .heading-dash{
     display: flex;
     color: white;

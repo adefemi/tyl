@@ -5,8 +5,10 @@
   min-height: 70vh;
 }
 
-.dashboard-inner {
-  width: 100%;
+@media screen and (max-width: 600px) {
+  .dashboard-inner {
+    width: 100%;
+  }
 }
 .dashboard-inner .heading-dash {
   display: flex;
