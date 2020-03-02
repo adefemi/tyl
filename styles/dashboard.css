@@ -5,7 +5,7 @@
   min-height: 70vh;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard-inner {
     width: 100%;
   }
@@ -15,6 +15,11 @@
   color: white;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .dashboard-inner .heading-dash {
+    justify-content: center;
+  }
 }
 .dashboard-inner .heading-dash .img-con {
   width: 45px;
@@ -34,12 +39,17 @@
   text-align: center;
   font-weight: 400;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard-inner .heading-dash h3 {
     font-size: 13px;
     margin: unset;
     text-align: left;
     max-width: 200px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .dashboard-inner .heading-dash.game-main h3 {
+    text-align: center;
   }
 }
 .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
@@ -48,7 +58,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
     grid-gap: 15px;
   }
@@ -86,7 +96,7 @@
   font-size: 10px;
   color: rgba(255, 255, 255, 0.7);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard-inner .grid-dash {
     width: unset;
     border-left-width: 2px;
@@ -194,7 +204,7 @@
   color: white;
   font-weight: 600;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .below {
     text-align: center;
     margin: 0 auto;
@@ -248,7 +258,7 @@
 .trans-table td .status.win, .trans-table th .status.win {
   background-color: green;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .trans-table {
     margin-right: 0;
     padding-right: 0;

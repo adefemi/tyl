@@ -12,7 +12,7 @@ a {
 .mobile {
   display: none !important;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .mobile {
     display: block !important;
   }
@@ -21,7 +21,7 @@ a {
 .desktop {
   display: block !important;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .desktop {
     display: none !important;
   }
@@ -37,7 +37,7 @@ a {
   padding: 0 40px;
   box-sizing: border-box;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .bg-container {
     min-height: unset;
     max-height: unset;
@@ -54,7 +54,7 @@ a {
   justify-content: space-between;
   height: 100%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .inner-container {
     display: block;
   }
@@ -175,7 +175,7 @@ a {
 .home-bg img {
   width: 100%;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .home-bg {
     position: relative;
     top: 0;
@@ -225,7 +225,7 @@ h4 {
   cursor: pointer;
   padding: 12px 30px !important;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .main-content {
     min-height: unset;
     margin: 0;
@@ -283,7 +283,7 @@ h4 {
   position: fixed;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  min-height: 768px;
   top: 0;
   left: 0;
   z-index: 10;
@@ -359,7 +359,7 @@ h4 {
   font-size: 17px;
   font-weight: bold;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .modal-main .inner .content .heading {
     font-size: 17px;
   }
@@ -382,7 +382,7 @@ h4 {
     right: 5vh;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .modal-main .inner {
     max-width: 80vw;
   }
@@ -436,7 +436,7 @@ h4 {
   background-color: transparent;
   border: 2px solid #3DA7DB;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .won-main .won {
     font-size: 27px;
     margin-bottom: 0;
@@ -482,7 +482,7 @@ h4 {
 .social-link .facebook img {
   width: 10px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .social-link {
     max-width: 120px;
   }
@@ -552,7 +552,7 @@ h4 {
   width: 40px;
   margin-right: 20px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .center-mode .transtart {
     position: fixed;
     z-index: 21;
@@ -597,7 +597,7 @@ h4 {
   border: 1px solid #3DA7DB;
   color: #3DA7DB;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .profile-heading {
     flex-direction: column;
     align-items: center;
@@ -697,7 +697,7 @@ h4 {
   flex-direction: column;
   flex: 1;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .contact {
     margin-top: 30px;
   }
@@ -732,7 +732,7 @@ h4 {
   box-sizing: border-box;
   text-align: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .transfer-input {
     min-width: unset;
     height: 50px;
@@ -741,11 +741,11 @@ h4 {
 }
 
 .transtart.success {
-  min-width: 600px;
+  min-width: 768px;
   background-color: #30A82B;
   height: 60px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .transtart.success {
     min-width: unset;
   }
@@ -763,7 +763,7 @@ h4 {
   font-size: 14px;
   max-width: 700px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .tranfer h2 {
     font-size: 14px;
   }
@@ -907,7 +907,7 @@ textarea {
   visibility: visible;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .fund-wallet p {
     font-size: 11px !important;
     max-width: 150px;
@@ -937,7 +937,7 @@ textarea {
   color: white;
   margin-top: 30px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .raffle-main .heading-dash input {
     background-color: white;
   }

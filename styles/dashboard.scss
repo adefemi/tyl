@@ -9,7 +9,7 @@
 
 .dashboard-inner{
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
   .heading-dash{
@@ -17,6 +17,10 @@
     color: white;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
 
     .img-con{
       width: 45px;
@@ -37,11 +41,19 @@
       text-align: center;
       font-weight: 400;
 
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 768px) {
         font-size: 13px;
         margin:unset;
         text-align: left;
         max-width: 200px;
+      }
+    }
+
+    &.game-main{
+      @media screen and (max-width: 768px) {
+        h3{
+          text-align: center;
+        }
       }
     }
   }
@@ -52,7 +64,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 3em;
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 768px){
       grid-gap: 15px;
     }
   }
@@ -97,7 +109,7 @@
       color: rgba(white, 0.7);
     }
 
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 768px){
       width: unset;
       border-left-width: 2px;
       display: flex;
@@ -225,7 +237,7 @@
     font-weight: 600;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     text-align: center;
     margin: 0 auto;
     margin-top: -50px;
@@ -281,7 +293,7 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     table{
       display: block;
     }
