@@ -37,7 +37,8 @@ function resetGameBoard() {
   } else {
     alert("You lose!!!");
   }
-
+  stopGame();
+  readyGame();
   startGame();
   resetEnvironment();
 }
