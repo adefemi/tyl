@@ -41,6 +41,49 @@
   }
 }
 
+.game-con{
+  transform: scale(0.5);
+  flex: 1;
+  position: absolute;
+  top: 23%;
+  left: 5%;
+
+  @media screen and (max-width: 768px) {
+    transform: scale(1.4);
+    top: -13vw;
+    left: -46vw;
+  }
+
+  @media screen and (max-width: 425px) {
+    transform: scale(2);
+    top: -38vh;
+    left: -56vw;
+  }
+
+  @media screen and (max-width: 380px) {
+    top: -40vh;
+    left: -50vw;
+  }
+
+  @media screen and (max-width: 320px) {
+    top: -56vw;
+    left: -40vw;
+  }
+}
+
+.below{
+  margin-top: 500px;
+  @media screen and (max-width: 768px) {
+    margin-top: 550px;
+  }
+  @media screen and (max-width: 425px) {
+    margin-top: 480px;
+  }
+  @media screen and (max-width: 360px) {
+    margin-top: 400px;
+  }
+}
+
 .game-box{
   display: flex;
   align-items: center;
@@ -48,6 +91,10 @@
 
   .sider{
     margin-left: 80px;
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: 25%;
   }
 
   button{

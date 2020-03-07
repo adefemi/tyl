@@ -1,4 +1,6 @@
 let useChoice = [];
+let gameStart = false;
+let matchChoice = [];
 let roller;
 let playButton;
 (() => {
@@ -6,15 +8,38 @@ let playButton;
   playButton.addEventListener("click", playButtonControl);
 })();
 
+function hightUserSelection(value) {
+  const inputList = document.getElementsByClassName("input-field-v");
+  for (var i = 0; i < inputList.length; i++) {
+    if (inputList[i].classList.contains("selected")) continue;
+    const inputVal = inputList[i].querySelector("input").value;
+    if (parseInt(inputVal.toString()) === parseInt(value.toString())) {
+      inputList[i].classList.add("selected");
+      matchChoice.push(value);
+      break;
+    }
+  }
+}
+
 function playButtonControl() {
-  if (!gameStart && useChoice.length < 3) {
+  if (useChoice.length < 3) {
     alert("Enter your choices first");
     return;
   }
-  gameStart = !gameStart;
-  playButton.innerText = "Playing";
-  playButton.backgroundColor = "#a32470";
-  rotateKicker();
+  gameStart = true;
+  startSpin();
+}
+
+function resetGameBoard() {
+  gameStart = false;
+  if (matchChoice.length >= useChoice.length) {
+    alert("You won!!!");
+  } else {
+    alert("You lose!!!");
+  }
+
+  startGame();
+  resetEnvironment();
 }
 
 function rotateKicker() {
@@ -102,6 +127,12 @@ function resetEnvironment() {
     ballEmptyList[i].setAttribute("data-value", "?");
     ballEmptyList[i].style.backgroundColor = "#DDDDDD";
   }
+  const inputList = document.getElementsByClassName("input-field-v");
+  for (var i = 0; i < inputList.length; i++) {
+    if (inputList[i].classList.contains("selected")) {
+      inputList[i].classList.remove("selected");
+    }
+  }
   playButton.innerText = "Play";
   playButton.backgroundColor = "#3DA7DB";
   useChoice = [];
@@ -109,5 +140,4 @@ function resetEnvironment() {
   selections = 0;
   selectedValues = [];
   clearInputs();
-  setUpEnvironment();
 }

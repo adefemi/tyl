@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TYL Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <link rel="stylesheet" href="./styles/default.css">
     <link rel="stylesheet" href="./styles/dashboard.css">
     <link rel="stylesheet" href="./styles/style.css" type="text/css" />
@@ -79,32 +83,49 @@
                        <h3>Welcome to TYL, as a new player you get a free game!</h3>
                    </div>
                    <div class="game-box">
-                        <div class="game-container">
-                            <div id="myCanvas" class="canVas"></div>
-                            <div class="selected" >
-                                <div class="selected-ball" id="ball-selected" data-value="?">
-                                </div>
-                            </div>
-                            <div class="starter">
-                                <div class="kicker" id="roller"></div>
-                                <div class="avatar"></div>
-                            </div>
-                            <div class="mouth-outlet"></div>
-                            <div class="ball-rack">
-                                <div class="ball-empty" data-value="?"></div>
-                                <div class="ball-empty" data-value="?"></div>
-                                <div class="ball-empty" data-value="?"></div>
-                            </div>
-                            <div class="cover-rack"></div>
-                        </div>
+                       <div class="game-con">
+                           <!-- PERCENT LOADER START-->
+                           <div id="mainLoader"><img src="assets/loader.png" /><br><span>0</span></div>
+                           <!-- PERCENT LOADER END-->
+
+                           <!-- CONTENT START-->
+
+                           <!-- BROWSER NOT SUPPORT START-->
+                           <div id="notSupportHolder">
+                               <div class="notSupport">YOUR BROWSER ISN'T SUPPORTED.<br/>PLEASE UPDATE YOUR BROWSER IN ORDER TO RUN THE GAME</div>
+                           </div>
+                           <!-- BROWSER NOT SUPPORT END-->
+
+                           <!-- ROTATE INSTRUCTION START-->
+                           <div id="rotateHolder">
+                               <div class="mobileRotate">
+                                   <div class="rotateDesc">
+                                       <div class="rotateImg"><img src="assets/rotate.png" /></div>
+                                       Rotate your device <br/>to landscape
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ROTATE INSTRUCTION END-->
+
+                           <!-- CANVAS START-->
+                           <canvas id="gameCanvas" width="600" height="400"></canvas>
+                           <!-- CONTENT END-->
+                       </div>
                        <div class="desktop">
                            <div class="sider">
                                <div class="input-con">
                                    <div class="info">Input your lucky number</div>
                                    <div class="input-list">
-                                       <input disabled type="text" id="input1"/>
-                                       <input disabled type="text" id="input2"/>
-                                       <input disabled type="text" id="input3"/>
+                                       <div class="input-field-v">
+                                           <input disabled type="text" id="input1"/>
+                                       </div>
+                                       <div class="input-field-v">
+                                           <input disabled type="text" id="input2"/>
+                                       </div>
+                                       <div class="input-field-v">
+                                           <input disabled type="text" id="input3"/>
+                                       </div>
+
                                    </div>
                                </div>
                                <div class="keys-con">
@@ -140,6 +161,7 @@
                        <center>
                            <a href="#modalMain"><button class="btn-mobile">Play Now</button></a>
                        </center>
+                       <br><br>
                    </div>
                </div>
               <div class="desktop">
@@ -277,8 +299,34 @@
             </div>
         </div>
     </div>
-    <script src="./scripts/controller.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.4.min.js"><\/script>')</script>
+
+    <script src="js/vendor/detectmobilebrowser.js"></script>
+    <script src="js/vendor/createjs-2015.11.26.min.js"></script>
+    <script src="js/vendor/TweenMax.min.js"></script>
+    <script src="js/vendor/p2.min.js"></script>
+
+    <script src="js/plugins.js"></script>
+    <script src="js/sound.js"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/p2.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/mobile.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/init.js"></script>
+<!--    <script src="./scripts/controller.js"></script>-->
     <script src="./scripts/controls.js"></script>
     <script src="./scripts/userControls.js"></script>
+
 </body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-86567323-39"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-86567323-19');
+</script>
 </html>

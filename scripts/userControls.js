@@ -1,6 +1,6 @@
 function userkey(val) {
   if (gameStart) {
-    alert("Game have started");
+    alert("Game already started");
     return;
   }
   if (val === "b" || val === "c") {
