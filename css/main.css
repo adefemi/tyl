@@ -1,6 +1,7 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
 html,button,input,select,textarea {
 color:#222;
 }
@@ -58,9 +59,7 @@ resize:vertical;
    Main styles
    ========================================================================== */
 @font-face {
-    font-family: 'quantifybold';
-    src: url('fonts/quantify_bold_v2.6-webfont.woff2') format('woff2'),
-         url('fonts/quantify_bold_v2.6-webfont.woff') format('woff');
+    font-family: 'Poppins', serif;
     font-weight: normal;
     font-style: normal;
 
