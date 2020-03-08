@@ -57,10 +57,28 @@
                <div class="brand"><a href="/"><img src="./assets/logo.png" alt=""></a></div>
                <div class="desktop">
                    <ul class="navright">
-                       <a href="/game-main.html"><li><span>Play</span></li></a>
-                       <a href="/contact-us.html"><li><span>Contact</span></li></a>
-                       <a href="/game-main.html#modalMain"><li><span>Join</span></li></a>
-                       <li class="signin">Sign in</li>
+                       <a href="/game-main.html"><li class="hoverer">Play</li></a>
+                       <a href="/dasboard.html"><li class="hoverer">Dashboard</li></a>
+                       <li>Wallet &nbsp;<i class="zmdi zmdi-chevron-down"></i>
+                           <div class="dropdown">
+                               <a href="/fund-wallet"><div class="drop-item">Fund Wallet</div></a>
+                               <a href="/cashout"><div class="drop-item">Cashout</div></a>
+                               <a href="/transfer"><div class="drop-item">Transfer Funds</div></a>
+                           </div>
+                       </li>
+                       <a href="/contact-us.html"><li class="hoverer">Contact</li></a>
+                       <li><div class="profile"><img src="./assets/user.svg" alt=""></div> &nbsp;08023419022&nbsp; &nbsp;<i class="zmdi zmdi-chevron-down"></i>
+                           <div class="dropdown">
+                               <a href="/profile.html"><div class="drop-item">Account</div></a>
+                               <a href="/cashout"><div class="drop-item">Logout</div></a>
+                           </div>
+                       </li>
+                       <li class="bal"><div class="inner">
+                           <div>Bal.</div>
+                           <img src="./assets/eye.svg" alt="">
+                       </div>
+                           <div class="money">N10,000</div>
+                       </li>
                    </ul>
                </div>
                <div class="navright mobile">
@@ -69,60 +87,44 @@
                    </a>
                </div>
            </div>
-           <div class="main-content won-main">
-               <h2 class="won">You have won</h2>
-               <h2>N10,000</h2>
-               <br><br>
+           <div class="home-bg">
+               <img src="./assets/cover.png" alt="">
+           </div>
+           <div class="main-content">
+               <h2>Play, Win and Cashout Instantly</h2>
                <p>
-                   You automatically qualify for our daily <br>
-                   and weekly raffle draw of
+                   TYL gives you the opportunity to play instant lottery via SMS, USSD, Mobile and Online. Play now to Transform Your Life today!
                </p>
-               <div class="won">N1,000,000</div>
-               <div class="context">
-                   Raffle ID: AB98wyr38FJ
-               </div>
-               <br>
-               <div class="controls">
-                   <button onclick="navigateLink(1)">PLAY AGAIN</button>
-                   <button>CASHOUT</button>
-               </div>
+               <a href="/game-main.html">
+                   <button>
+                       PLAY NOW
+                   </button>
+               </a>
            </div>
-           <div class="mobile">
-               <div class="sharer">
-                   <p>share the good news with your friend</p>
-                   <button>Share</button>
-                   <ul class="social-link">
-                       <li class="facebook"><img src="./assets/facebook.svg" alt=""></li>
-                       <li><img src="./assets/twitter.svg" alt=""></li>
-                       <li><img src="./assets/whatsapp.svg" alt=""></li>
-                       <li><img src="./assets/mail.svg" alt=""></li>
-                   </ul>
-               </div>
-               <br><br>
-           </div>
-           <div class="desktop">
-               <div class="bottom-items-container">
-                   <div class="bottom-items">how to play</div>
-                   <div class="bottom-items">Terms and Conditions</div>
-                   <div class="bottom-items">Responsible Gaming</div>
-                   <div class="bottom-items powered">Powered by <div><img src="./assets/logo1.png" alt=""></div></div>
-                   <div class="bottom-items">Privacy Policy</div>
-                   <div class="bottom-items">Licenses and Permits</div>
-                   <div class="bottom-items"><div class="chat">
-                       <i class="zmdi zmdi-comment-more"></i>
-                   </div></div>
-               </div>
-           </div>
+          <div class="desktop">
+              <div class="bottom-items-container">
+                  <div class="bottom-items">how to play</div>
+                  <div class="bottom-items">Terms and Conditions</div>
+                  <div class="bottom-items">Responsible Gaming</div>
+                  <div class="bottom-items powered">Powered by <div><img src="./assets/logo1.png" alt=""></div></div>
+                  <div class="bottom-items">Privacy Policy</div>
+                  <div class="bottom-items">Licenses and Permits</div>
+                  <div class="bottom-items"><div class="chat">
+                      <i class="zmdi zmdi-comment-more"></i>
+                  </div></div>
+              </div>
+          </div>
 
            <div class="mobile">
                <div class="bottom-items"><div class="chat fixed">
                    <i class="zmdi zmdi-comment-more"></i>
                </div></div>
            </div>
+           <div class="mobile">
+               <br><br>
+           </div>
+
        </div>
     </div>
-
-
-    <script src="./scripts/controls.js"></script>
 </body>
 </html>

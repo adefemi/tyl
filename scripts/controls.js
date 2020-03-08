@@ -5,16 +5,22 @@ let roller;
 let playButton;
 (() => {
   playButton = document.getElementById("play");
+  playButtonTwin = document.getElementById("play1");
   playButton.addEventListener("click", playButtonControl);
+  playButtonTwin.addEventListener("click", playButtonControl);
 })();
 
 function hightUserSelection(value) {
   const inputList = document.getElementsByClassName("input-field-v");
+  const inputListTwin = document.getElementsByClassName("input-field-v1");
   for (var i = 0; i < inputList.length; i++) {
     if (inputList[i].classList.contains("selected")) continue;
+    if (inputListTwin[i].classList.contains("selected")) continue;
     const inputVal = inputList[i].querySelector("input").value;
+    const inputValTwin = inputListTwin[i].querySelector("input").value;
     if (parseInt(inputVal.toString()) === parseInt(value.toString())) {
       inputList[i].classList.add("selected");
+      inputListTwin[i].classList.add("selected");
       matchChoice.push(value);
       break;
     }
@@ -22,23 +28,43 @@ function hightUserSelection(value) {
 }
 
 function playButtonControl() {
-  if (useChoice.length < 3) {
-    alert("Enter your choices first");
+  if (gameStart) {
+    alert("Game already started!!!");
     return;
   }
+  if (useChoice.length < 1) {
+    generateUserChoice();
+    return;
+  }
+  playButton.innerText = "playing...";
+  playButtonTwin.innerText = "playing...";
+  score_arr = useChoice;
+  setRevealBalls();
   gameStart = true;
   startSpin();
+}
+
+function generateUserChoice() {
+  for (var i = 0; i < 3; i++) {
+    useChoice.push(Math.floor(Math.random() * (9 - 0 + 1) + 0));
+    updateUserSelection();
+  }
+}
+
+function navigateLink(val) {
+  if (val === 1) {
+    window.location.href = "/game-main.html";
+  }
 }
 
 function resetGameBoard() {
   gameStart = false;
   if (matchChoice.length >= useChoice.length) {
-    alert("You won!!!");
+    window.location.href = "/won.html";
   } else {
-    alert("You lose!!!");
+    window.location.href = "/not-win.html";
   }
   stopGame();
-  readyGame();
   startGame();
   resetEnvironment();
 }
@@ -135,10 +161,12 @@ function resetEnvironment() {
     }
   }
   playButton.innerText = "Play";
-  playButton.backgroundColor = "#3DA7DB";
+  playButtonTwin.innerText = "Play";
+  playButton.style.backgroundColor = "#db5c2a";
+  playButtonTwin.style.backgroundColor = "#db5c2a";
   useChoice = [];
   gameDataList = [];
   selections = 0;
   selectedValues = [];
-  clearInputs();
+  updateUserSelection();
 }

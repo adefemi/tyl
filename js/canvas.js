@@ -164,7 +164,7 @@ function buildGameCanvas() {
   itemTable.y = (canvasH / 100) * 48;
 
   selectTitleTxt = new createjs.Text();
-  selectTitleTxt.font = "35px quantifybold";
+  selectTitleTxt.font = "35px Poppins";
   selectTitleTxt.color = "#deb868";
   selectTitleTxt.textAlign = "center";
   selectTitleTxt.textBaseline = "alphabetic";
@@ -173,7 +173,7 @@ function buildGameCanvas() {
   selectTitleTxt.y = (canvasH / 100) * 28;
 
   numberTitleTxt = new createjs.Text();
-  numberTitleTxt.font = "35px quantifybold";
+  numberTitleTxt.font = "35px Poppins";
   numberTitleTxt.color = "#deb868";
   numberTitleTxt.textAlign = "center";
   numberTitleTxt.textBaseline = "alphabetic";
@@ -202,7 +202,7 @@ function buildGameCanvas() {
     $.prize["bgselect" + n].y = startY;
 
     $.prize["text" + n] = new createjs.Text();
-    $.prize["text" + n].font = "25px quantifybold";
+    $.prize["text" + n].font = "25px Poppins";
     $.prize["text" + n].color = "#8d6d2c";
     $.prize["text" + n].textAlign = "left";
     $.prize["text" + n].textBaseline = "alphabetic";
@@ -210,7 +210,7 @@ function buildGameCanvas() {
     $.prize["text" + n].y = startY + 10;
 
     $.prize["score" + n] = new createjs.Text();
-    $.prize["score" + n].font = "28px quantifybold";
+    $.prize["score" + n].font = "28px Poppins";
     $.prize["score" + n].color = "#8d6d2c";
     $.prize["score" + n].textAlign = "right";
     $.prize["score" + n].textBaseline = "alphabetic";
@@ -280,7 +280,7 @@ function buildGameCanvas() {
   itemResult = new createjs.Bitmap(loader.getResult("itemResult"));
 
   resultTitleTxt = new createjs.Text();
-  resultTitleTxt.font = "50px quantifybold";
+  resultTitleTxt.font = "50px Poppins";
   resultTitleTxt.color = "#ddb867";
   resultTitleTxt.textAlign = "center";
   resultTitleTxt.textBaseline = "alphabetic";
@@ -289,7 +289,7 @@ function buildGameCanvas() {
   resultTitleTxt.y = (canvasH / 100) * 45;
 
   resultShareTxt = new createjs.Text();
-  resultShareTxt.font = "30px quantifybold";
+  resultShareTxt.font = "30px Poppins";
   resultShareTxt.color = "#8e6c2b";
   resultShareTxt.textAlign = "center";
   resultShareTxt.textBaseline = "alphabetic";
@@ -358,7 +358,7 @@ function buildGameCanvas() {
   buttonCancel.y = (canvasH / 100) * 67;
 
   confirmMessageTxt = new createjs.Text();
-  confirmMessageTxt.font = "40px quantifybold";
+  confirmMessageTxt.font = "40px Poppins";
   confirmMessageTxt.color = "#ddb867";
   confirmMessageTxt.textAlign = "center";
   confirmMessageTxt.textBaseline = "alphabetic";

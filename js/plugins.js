@@ -40,15 +40,15 @@
 
 // Place any jQuery/helper plugins in here.
 function checkContentHeight(target) {
-  var stageHeight = $(window).height();
-  var newHeight = stageHeight / 2 - target.height() / 2;
-  return newHeight;
+  // var stageHeight = $(window).height();
+  // var newHeight = stageHeight / 2 - target.height() / 2;
+  // return newHeight;
 }
 
 function checkContentWidth(target) {
-  var stageWidth = $(window).width();
-  var newWidth = stageWidth / 2 - target.width() / 2;
-  return newWidth;
+  // var stageWidth = $(window).width();
+  // var newWidth = stageWidth / 2 - target.width() / 2;
+  // return newWidth;
 }
 
 function getDeviceVer() {

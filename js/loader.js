@@ -125,7 +125,7 @@ function handleFileError(evt) {
  *
  */
 function handleProgress() {
-  $("#mainLoader span").html(Math.round((loader.progress / 1) * 100) + "%");
+  $("#counter-main").html(Math.round((loader.progress / 1) * 100) + "%");
 }
 
 /*!
@@ -145,8 +145,8 @@ function handleComplete() {
  */
 function toggleLoader(con) {
   if (con) {
-    $("#mainLoader").show();
+    $("#loader-main").show();
   } else {
-    $("#mainLoader").hide();
+    setTimeout(() => $("#loader-main").hide(), 500);
   }
 }

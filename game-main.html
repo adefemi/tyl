@@ -18,6 +18,10 @@
 </head>
 <body>
     <div class="bg-container home-container">
+        <div class="loader-main" id="loader-main">
+            <div class="logo"><img src="./assets/logo.png" alt=""></div>
+            <div class="counter" id="counter-main">0</div>
+        </div>
        <div class="inner-container">
            <div class="mobile ">
                <div class="sidebar" id="sidebar">
@@ -143,7 +147,7 @@
                                    <div class="key-item" onclick="userkey('b')"><i class="zmdi zmdi-undo"></i></div>
                                </div>
                                <br>
-                               <button id="play">Play</button>
+                               <button id="play">Feeling Lucky</button>
 
                                <br>
                                <br>
@@ -273,10 +277,17 @@
                     <br>
                     <div class="input-con">
                         <div class="info">Input your lucky number</div>
-                        <div class="input-list">
-                            <input disabled type="text" id="input11"/>
-                            <input disabled type="text" id="input22"/>
-                            <input disabled type="text" id="input33"/>
+                        <div class="input-list1">
+                            <div class="input-field-v1">
+                                <input disabled type="text" id="input11"/>
+                            </div>
+                            <div class="input-field-v1">
+                                <input disabled type="text" id="input12"/>
+                            </div>
+                            <div class="input-field-v1">
+                                <input disabled type="text" id="input13"/>
+                            </div>
+
                         </div>
                     </div>
                     <div class="keys-con">
@@ -294,7 +305,7 @@
                         <div class="key-item" onclick="userkey('b')"><i class="zmdi zmdi-undo"></i></div>
                     </div>
                     <br>
-                    <a href="#"> <button id="play1" class="play-main">Play</button></a>
+                    <a href="#"> <button id="play1" class="play-main">Feeling Lucky</button></a>
                 </div>
             </div>
         </div>

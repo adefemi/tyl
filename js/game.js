@@ -358,47 +358,44 @@ function startSpin() {
       gameData.selectArray.push(gameData.buttonArray[n]);
     }
   }
+  playSound("soundStartSpin");
 
-  if (useChoice.length == score_arr.length) {
-    playSound("soundStartSpin");
+  itemBarUser.visible = false;
+  buttonSphereStart.visible = false;
 
-    itemBarUser.visible = false;
-    buttonSphereStart.visible = false;
+  selectTitleTxt.text = prizeTableDisplay;
 
-    selectTitleTxt.text = prizeTableDisplay;
+  shuffle(gameData.numberArray);
+  setSelectBalls();
+  gameData.spin = true;
 
-    shuffle(gameData.numberArray);
-    setSelectBalls();
-    gameData.spin = true;
-
-    if (gameData.revealArray.length == 0) {
-      var extraBall = bonusBall == true ? 1 : 0;
-      for (var b = 0; b < score_arr.length + extraBall; b++) {
-        gameData.revealArray.push(gameData.numberArray[b]);
-      }
+  if (gameData.revealArray.length == 0) {
+    var extraBall = bonusBall == true ? 1 : 0;
+    for (var b = 0; b < score_arr.length + extraBall; b++) {
+      gameData.revealArray.push(gameData.numberArray[b]);
     }
-
-    for (var n = 0; n < gameData.revealArray.length; n++) {
-      var currentNumber = gameData.revealArray[n];
-
-      for (var p = 0; p < gameData.ballNumber.length; p++) {
-        if (currentNumber == gameData.ballNumber[p].number) {
-          gameData.ballNumber[p].status = true;
-        }
-      }
-    }
-
-    TweenMax.to(radiusTweenData, spinStartSpeed, {
-      radius: spinSpeed,
-      overwrite: true,
-      onComplete: beginWinNumberTimer
-    });
-    TweenMax.to(soundTweenData, spinStartSpeed, {
-      volume: 1,
-      overwrite: true,
-      onUpdate: updateBallsVolume
-    });
   }
+
+  for (var n = 0; n < gameData.revealArray.length; n++) {
+    var currentNumber = gameData.revealArray[n];
+
+    for (var p = 0; p < gameData.ballNumber.length; p++) {
+      if (currentNumber == gameData.ballNumber[p].number) {
+        gameData.ballNumber[p].status = true;
+      }
+    }
+  }
+
+  TweenMax.to(radiusTweenData, spinStartSpeed, {
+    radius: spinSpeed,
+    overwrite: true,
+    onComplete: beginWinNumberTimer
+  });
+  TweenMax.to(soundTweenData, spinStartSpeed, {
+    volume: 1,
+    overwrite: true,
+    onUpdate: updateBallsVolume
+  });
 }
 
 function updateBallsVolume() {
@@ -459,7 +456,7 @@ function readyGame() {
       newNumberSelectBg.y = currentY;
 
       var newText = new createjs.Text();
-      newText.font = "35px quantifybold";
+      newText.font = "35px Poppins";
       newText.color = "#000";
       newText.textAlign = "center";
       newText.textBaseline = "alphabetic";
@@ -673,7 +670,7 @@ function createBall(number) {
   var ballNumber = number;
   var space = 53;
   var newText = new createjs.Text();
-  newText.font = "25px quantifybold";
+  newText.font = "25px Poppins";
   newText.color = "#000";
   newText.textAlign = "center";
   newText.textBaseline = "alphabetic";
@@ -682,7 +679,7 @@ function createBall(number) {
   newText.y = 10;
 
   var newText2 = new createjs.Text();
-  newText2.font = "25px quantifybold";
+  newText2.font = "25px Poppins";
   newText2.color = "#000";
   newText2.textAlign = "center";
   newText2.textBaseline = "alphabetic";
@@ -691,7 +688,7 @@ function createBall(number) {
   newText2.y = 10;
 
   var newText3 = new createjs.Text();
-  newText3.font = "25px quantifybold";
+  newText3.font = "25px Poppins";
   newText3.color = "#000";
   newText3.textAlign = "center";
   newText3.textBaseline = "alphabetic";
@@ -700,7 +697,7 @@ function createBall(number) {
   newText3.y = space + 10;
 
   var newText4 = new createjs.Text();
-  newText4.font = "25px quantifybold";
+  newText4.font = "25px Poppins";
   newText4.color = "#000";
   newText4.textAlign = "center";
   newText4.textBaseline = "alphabetic";
