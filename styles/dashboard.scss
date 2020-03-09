@@ -5,6 +5,10 @@
   justify-content: space-between;
   margin-top: 40px;
   min-height: 70vh;
+
+  @media screen and (max-width: 600px){
+    margin-top: 10px;
+  }
 }
 
 .dashboard-inner{

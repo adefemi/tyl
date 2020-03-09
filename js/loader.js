@@ -17,56 +17,61 @@ function initPreload() {
   });
   resizeGameFunc();
 
-  loader = new createjs.LoadQueue(false);
+  try {
+    loader = new createjs.LoadQueue(false);
+  } catch (e) {
+    window.location.reload();
+    return;
+  }
   manifest = [
-    { src: "assets/bg4.png", id: "bg" },
-    { src: "assets/logo.png", id: "logo" },
-    { src: "assets/button_start.png", id: "buttonStart" },
+    { src: "/assets/bg4.png", id: "bg" },
+    { src: "/assets/logo.png", id: "logo" },
+    { src: "/assets/button_start.png", id: "buttonStart" },
 
-    { src: "assets/item_ball.png", id: "itemBall" },
-    { src: "assets/item_ball_dim.png", id: "itemBallDim" },
-    { src: "assets/item_ball_guess.png", id: "itemBallGuess" },
-    { src: "assets/item_ball_bonus.png", id: "itemBallBonus" },
-    { src: "assets/item_ball_hit.png", id: "itemBallHit" },
+    { src: "/assets/item_ball.png", id: "itemBall" },
+    { src: "/assets/item_ball_dim.png", id: "itemBallDim" },
+    { src: "/assets/item_ball_guess.png", id: "itemBallGuess" },
+    { src: "/assets/item_ball_bonus.png", id: "itemBallBonus" },
+    { src: "/assets/item_ball_hit.png", id: "itemBallHit" },
 
-    { src: "assets/item_ball_bg.png", id: "itemBallBg" },
-    { src: "assets/item_ball_shadow.png", id: "itemBallShadow" },
-    { src: "assets/item_ball_shadow_blue.png", id: "itemBallShadowBlue" },
-    { src: "assets/item_ball_shadow_red.png", id: "itemBallShadowRed" },
+    { src: "/assets/item_ball_bg.png", id: "itemBallBg" },
+    { src: "/assets/item_ball_shadow.png", id: "itemBallShadow" },
+    { src: "/assets/item_ball_shadow_blue.png", id: "itemBallShadowBlue" },
+    { src: "/assets/item_ball_shadow_red.png", id: "itemBallShadowRed" },
 
-    { src: "assets/item_sphere.png", id: "itemSphere" },
-    { src: "assets/item_stick.png", id: "itemStick" },
-    { src: "assets/item_shine.png", id: "itemShine" },
-    { src: "assets/item_bar.png", id: "itemBar" },
-    { src: "assets/item_bar_bonus.png", id: "itemBarBonus" },
+    { src: "/assets/item_sphere.png", id: "itemSphere" },
+    { src: "/assets/item_stick.png", id: "itemStick" },
+    { src: "/assets/item_shine.png", id: "itemShine" },
+    { src: "/assets/item_bar.png", id: "itemBar" },
+    { src: "/assets/item_bar_bonus.png", id: "itemBarBonus" },
 
-    { src: "assets/item_card.png", id: "itemCard" },
-    { src: "assets/item_number_bg.png", id: "itemNumberBg" },
-    { src: "assets/item_number_select_bg.png", id: "itemNumberSelectBg" },
-    { src: "assets/button_lucky.png", id: "buttonLucky" },
-    { src: "assets/button_sphere.png", id: "buttonSphereStart" },
-    { src: "assets/item_table.png", id: "itemTable" },
+    { src: "/assets/item_card.png", id: "itemCard" },
+    { src: "/assets/item_number_bg.png", id: "itemNumberBg" },
+    { src: "/assets/item_number_select_bg.png", id: "itemNumberSelectBg" },
+    { src: "/assets/button_lucky.png", id: "buttonLucky" },
+    { src: "/assets/button_sphere.png", id: "buttonSphereStart" },
+    { src: "/assets/item_table.png", id: "itemTable" },
 
-    { src: "assets/item_prize_bg.png", id: "itemPrizeBg" },
-    { src: "assets/item_prize_select_bg.png", id: "itemPrizeSelectBg" },
+    { src: "/assets/item_prize_bg.png", id: "itemPrizeBg" },
+    { src: "/assets/item_prize_select_bg.png", id: "itemPrizeSelectBg" },
 
-    { src: "assets/button_confirm.png", id: "buttonConfirm" },
-    { src: "assets/button_cancel.png", id: "buttonCancel" },
-    { src: "assets/item_exit.png", id: "itemExit" },
+    { src: "/assets/button_confirm.png", id: "buttonConfirm" },
+    { src: "/assets/button_cancel.png", id: "buttonCancel" },
+    { src: "/assets/item_exit.png", id: "itemExit" },
 
-    { src: "assets/item_result.png", id: "itemResult" },
-    { src: "assets/button_continue.png", id: "buttonContinue" },
-    { src: "assets/button_facebook.png", id: "buttonFacebook" },
-    { src: "assets/button_twitter.png", id: "buttonTwitter" },
-    { src: "assets/button_whatsapp.png", id: "buttonWhatsapp" },
-    { src: "assets/button_fullscreen.png", id: "buttonFullscreen" },
-    { src: "assets/button_sound_on.png", id: "buttonSoundOn" },
-    { src: "assets/button_sound_off.png", id: "buttonSoundOff" },
-    { src: "assets/button_exit.png", id: "buttonExit" },
-    { src: "assets/button_settings.png", id: "buttonSettings" },
+    { src: "/assets/item_result.png", id: "itemResult" },
+    { src: "/assets/button_continue.png", id: "buttonContinue" },
+    { src: "/assets/button_facebook.png", id: "buttonFacebook" },
+    { src: "/assets/button_twitter.png", id: "buttonTwitter" },
+    { src: "/assets/button_whatsapp.png", id: "buttonWhatsapp" },
+    { src: "/assets/button_fullscreen.png", id: "buttonFullscreen" },
+    { src: "/assets/button_sound_on.png", id: "buttonSoundOn" },
+    { src: "/assets/button_sound_off.png", id: "buttonSoundOff" },
+    { src: "/assets/button_exit.png", id: "buttonExit" },
+    { src: "/assets/button_settings.png", id: "buttonSettings" },
 
-    { src: "assets/button_left.png", id: "buttonLeft" },
-    { src: "assets/button_right.png", id: "buttonRight" }
+    { src: "/assets/button_left.png", id: "buttonLeft" },
+    { src: "/assets/button_right.png", id: "buttonRight" }
   ];
 
   soundOn = true;
@@ -77,17 +82,20 @@ function initPreload() {
   }
 
   if (soundOn) {
-    manifest.push({ src: "assets/sounds/click.ogg", id: "soundClick" });
-    manifest.push({ src: "assets/sounds/balls.ogg", id: "soundBalls" });
-    manifest.push({ src: "assets/sounds/reveal.ogg", id: "soundReveal" });
-    manifest.push({ src: "assets/sounds/startspin.ogg", id: "soundStartSpin" });
-    manifest.push({ src: "assets/sounds/win.ogg", id: "soundWin" });
-    manifest.push({ src: "assets/sounds/suck.ogg", id: "soundSuck" });
-    manifest.push({ src: "assets/sounds/complete.ogg", id: "soundComplete" });
-    manifest.push({ src: "assets/sounds/number.ogg", id: "soundNumber" });
-    manifest.push({ src: "assets/sounds/random.ogg", id: "soundRandom" });
-    manifest.push({ src: "assets/sounds/cage.ogg", id: "soundCage" });
-    manifest.push({ src: "assets/sounds/fail.ogg", id: "soundFail" });
+    manifest.push({ src: "/assets/click.ogg", id: "soundClick" });
+    manifest.push({ src: "/assets/balls.ogg", id: "soundBalls" });
+    manifest.push({ src: "/assets/reveal.ogg", id: "soundReveal" });
+    manifest.push({
+      src: "/assets/startspin.ogg",
+      id: "soundStartSpin"
+    });
+    manifest.push({ src: "/assets/win.ogg", id: "soundWin" });
+    manifest.push({ src: "/assets/suck.ogg", id: "soundSuck" });
+    manifest.push({ src: "/assets/complete.ogg", id: "soundComplete" });
+    manifest.push({ src: "/assets/number.ogg", id: "soundNumber" });
+    manifest.push({ src: "/assets/random.ogg", id: "soundRandom" });
+    manifest.push({ src: "/assets/cage.ogg", id: "soundCage" });
+    manifest.push({ src: "/assets/fail.ogg", id: "soundFail" });
 
     createjs.Sound.alternateExtensions = ["mp3"];
     loader.installPlugin(createjs.Sound);

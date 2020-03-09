@@ -20,7 +20,7 @@
     <div class="bg-container home-container">
         <div class="loader-main" id="loader-main">
             <div class="logo"><img src="./assets/logo.png" alt=""></div>
-            <div class="counter" id="counter-main"></div>
+            <div class="counter" > <span id="counter-main"></span></div>
         </div>
        <div class="inner-container">
            <div class="mobile ">
@@ -115,23 +115,24 @@
                            <canvas id="gameCanvas" width="600" height="400"></canvas>
                            <!-- CONTENT END-->
                        </div>
-                       <div class="desktop">
-                           <div class="sider">
-                               <div class="input-con">
-                                   <div class="info">Input your lucky number</div>
-                                   <div class="input-list">
-                                       <div class="input-field-v">
-                                           <input disabled type="text" id="input1"/>
-                                       </div>
-                                       <div class="input-field-v">
-                                           <input disabled type="text" id="input2"/>
-                                       </div>
-                                       <div class="input-field-v">
-                                           <input disabled type="text" id="input3"/>
-                                       </div>
-
+                       <div class="sider">
+                           <div class="input-con">
+                               <div class="desktop"><div class="info">Input your lucky number</div></div>
+                               <div class="mobile"><div class="info">Your inputs</div></div>
+                               <div class="input-list">
+                                   <div class="input-field-v">
+                                       <input disabled type="text" id="input1"/>
                                    </div>
+                                   <div class="input-field-v">
+                                       <input disabled type="text" id="input2"/>
+                                   </div>
+                                   <div class="input-field-v">
+                                       <input disabled type="text" id="input3"/>
+                                   </div>
+
                                </div>
+                           </div>
+                           <div class="desktop">
                                <div class="keys-con">
                                    <div class="key-item" onclick="userkey(1)">1</div>
                                    <div class="key-item" onclick="userkey(2)">2</div>
@@ -148,10 +149,6 @@
                                </div>
                                <br>
                                <button id="play">Feeling Lucky</button>
-
-                               <br>
-                               <br>
-                               <a href="#modalMain">Run Modal</a>
                            </div>
                        </div>
                    </div>
@@ -254,7 +251,7 @@
                     <br>
                     <div class="desktop">
                         <a href="#">
-                            <button>
+                            <button onclick="playButtonControl(1)">
                                 Continue
                             </button>
                         </a>
@@ -305,7 +302,80 @@
                         <div class="key-item" onclick="userkey('b')"><i class="zmdi zmdi-undo"></i></div>
                     </div>
                     <br>
-                    <a href="#"> <button id="play1" class="play-main">Feeling Lucky</button></a>
+                    <button id="play1" class="play-main">Feeling Lucky</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal-main" id="winModal">
+            <div class="inner">
+                <div class="overlay"></div>
+                <div class="content">
+                    <a href="#"><div class="close" onclick="navigateLink(1)"><i class="zmdi zmdi-close"></i></div></a>
+                    <div class="main-content won-main">
+                        <h2 class="won">You have won</h2>
+                        <h2>N10,000</h2>
+                        <br><br>
+                        <p>
+                            You automatically qualify for our daily <br>
+                            and weekly raffle draw of
+                        </p>
+                        <div class="won">N1,000,000</div>
+                        <div class="context">
+                            Raffle ID: AB98wyr38FJ
+                        </div>
+                        <br>
+                        <div class="controls">
+                            <button onclick="navigateLink(1)">PLAY AGAIN</button>
+                            <button>CASHOUT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-main" id="lossModal">
+            <div class="inner">
+                <div class="overlay"></div>
+                <div class="content">
+                    <a href="#"><div class="close" onclick="navigateLink(1)"><i class="zmdi zmdi-close"></i></div></a>
+                    <div class="main-content won-main">
+                        <h2 class="won not">Sorry <br>you did not win</h2>
+                        <br>
+                        <div class="ball-show">
+                            <div class="content-type">
+                               <div class="label-data">TYL selections</div>
+                                <div class="balls-select" id="tyl-select">
+                                    <div class="ballVal selected">1</div>
+                                    <div class="ballVal">2</div>
+                                    <div class="ballVal">3</div>
+                                </div>
+                            </div>
+                            -
+                            <div class="content-type">
+                               <div class="label-data">Your selections</div>
+                                <div class="balls-select" id="user-select">
+                                    <div class="ballVal selected">9</div>
+                                    <div class="ballVal">5</div>
+                                    <div class="ballVal">4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p>
+                            You automatically qualify for our daily <br>
+                            and weekly raffle draw of
+                        </p>
+                        <div class="won">N1,000,000</div>
+                        <div class="context">
+                            Raffle ID: AB98wyr38FJ
+                        </div>
+                        <br>
+                        <div class="controls">
+                            <button onclick="navigateLink(1)">PLAY AGAIN</button>
+                            <button>CASHOUT</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

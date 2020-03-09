@@ -7,7 +7,7 @@ let playButton;
   playButton = document.getElementById("play");
   playButtonTwin = document.getElementById("play1");
   playButton.addEventListener("click", playButtonControl);
-  playButtonTwin.addEventListener("click", playButtonControl);
+  playButtonTwin.addEventListener("click", () => playButtonControl(2));
 })();
 
 function hightUserSelection(value) {
@@ -22,22 +22,32 @@ function hightUserSelection(value) {
       inputList[i].classList.add("selected");
       inputListTwin[i].classList.add("selected");
       matchChoice.push(value);
+      playSound("soundWin");
       break;
     }
   }
 }
 
-function playButtonControl() {
-  if (gameStart) {
-    alert("Game already started!!!");
-    return;
-  }
+function playButtonControl(val) {
   if (useChoice.length < 1) {
     generateUserChoice();
     return;
   }
+  if (val !== 1 && val !== 2) {
+    window.location.hash = "#modalMain";
+    return;
+  }
+
+  if (val === 2) {
+    window.location.hash = "";
+  }
+  if (useChoice.length === 1) gameData.revealArray = [1];
+  else if (useChoice.length === 2) gameData.revealArray = [1, 1];
+
   playButton.innerText = "playing...";
   playButtonTwin.innerText = "playing...";
+  playButton.style.backgroundColor = "#db5c2a";
+  playButtonTwin.style.backgroundColor = "#db5c2a";
   score_arr = useChoice;
   setRevealBalls();
   gameStart = true;
@@ -53,20 +63,63 @@ function generateUserChoice() {
 
 function navigateLink(val) {
   if (val === 1) {
-    window.location.href = "/game-main.html";
+    window.location.hash = "";
+    startGame();
+    resetEnvironment();
   }
 }
 
 function resetGameBoard() {
   gameStart = false;
   if (matchChoice.length >= useChoice.length) {
-    window.location.href = "/won.html";
+    console.log(matchChoice, " - ", useChoice);
+    window.location.hash = "winModal";
   } else {
-    window.location.href = "/not-win.html";
+    let tyl_box = document.getElementById("tyl-select");
+    tyl_box.innerHTML = "";
+    let user_box = document.getElementById("user-select");
+    user_box.innerText = "";
+    let tempUser = useChoice;
+
+    // load tyl box
+    for (let i = 0; i < gameData.revealArray.length; i++) {
+      let tempBall = document.createElement("div");
+      tempBall.innerText = gameData.revealArray[i];
+      tempBall.classList.add("ballVal");
+      let activeIndex;
+      for (let j = 0; j < tempUser.length; j++) {
+        if (tempUser[j] === gameData.revealArray[i]) {
+          tempBall.classList.add("selected");
+          activeIndex = j;
+          break;
+        }
+      }
+      tempUser = tempUser.filter((item, ind) => ind !== activeIndex);
+      tyl_box.appendChild(tempBall);
+    }
+
+    tempUser = gameData.revealArray;
+
+    // load user box
+    for (let i = 0; i < useChoice.length; i++) {
+      let tempBall = document.createElement("div");
+      tempBall.innerText = useChoice[i];
+      let activeIndex;
+      tempBall.classList.add("ballVal");
+      for (let j = 0; j < tempUser.length; j++) {
+        if (tempUser[j] === useChoice[i]) {
+          tempBall.classList.add("selected");
+          activeIndex = j;
+          break;
+        }
+      }
+      tempUser = tempUser.filter((item, ind) => ind !== activeIndex);
+      user_box.appendChild(tempBall);
+    }
+
+    window.location.hash = "lossModal";
   }
   stopGame();
-  startGame();
-  resetEnvironment();
 }
 
 function rotateKicker() {
@@ -162,8 +215,8 @@ function resetEnvironment() {
   }
   playButton.innerText = "Play";
   playButtonTwin.innerText = "Play";
-  playButton.style.backgroundColor = "#db5c2a";
-  playButtonTwin.style.backgroundColor = "#db5c2a";
+  playButton.style.backgroundColor = "#3DA7DB";
+  playButtonTwin.style.backgroundColor = "#3DA7DB";
   useChoice = [];
   gameDataList = [];
   selections = 0;

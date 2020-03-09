@@ -1,12 +1,13 @@
 .dashboard {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-top: 40px;
   min-height: 70vh;
+}
+@media screen and (max-width: 600px) {
+  .dashboard {
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -14,28 +15,17 @@
     width: 100%;
   }
 }
-
 .dashboard-inner .heading-dash {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   color: white;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
-
 @media screen and (max-width: 768px) {
   .dashboard-inner .heading-dash {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
 }
-
 .dashboard-inner .heading-dash .img-con {
   width: 45px;
   height: 45px;
@@ -43,21 +33,17 @@
   background-color: white;
   overflow: hidden;
 }
-
 .dashboard-inner .heading-dash .img-con img {
   width: 45px;
 }
-
 .dashboard-inner .heading-dash span {
   font-weight: bold;
   color: #3DA7DB;
 }
-
 .dashboard-inner .heading-dash h3 {
   text-align: center;
   font-weight: 400;
 }
-
 @media screen and (max-width: 768px) {
   .dashboard-inner .heading-dash h3 {
     font-size: 13px;
@@ -66,92 +52,63 @@
     max-width: 200px;
   }
 }
-
 @media screen and (max-width: 768px) {
   .dashboard-inner .heading-dash.game-main h3 {
     text-align: center;
   }
 }
-
 .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
   margin-top: 1em;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 3em;
 }
-
 @media screen and (max-width: 768px) {
   .dashboard-inner .dasboard-grid, .dashboard-inner .grid {
     grid-gap: 15px;
   }
 }
-
 .dashboard-inner .grid-dash {
   width: 250px;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 5fr;
-      grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr 5fr;
   grid-gap: 10px;
   padding: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid gray;
   border-left: 8px solid red;
   color: white;
 }
-
 .dashboard-inner .grid-dash .currency {
   height: 30px;
   background-color: rgba(255, 255, 255, 0.1);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
 }
-
 .dashboard-inner .grid-dash .grid {
   grid-gap: 1em;
 }
-
 .dashboard-inner .grid-dash h5, .dashboard-inner .grid-dash h3 {
   margin: 0;
 }
-
 .dashboard-inner .grid-dash h5 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-
 .dashboard-inner .grid-dash small {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.7);
 }
-
 @media screen and (max-width: 768px) {
   .dashboard-inner .grid-dash {
     width: unset;
     border-left-width: 2px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .dashboard-inner .grid-dash small {
     font-size: 8px;
@@ -175,49 +132,34 @@
     margin-top: 20px;
   }
 }
-
 .dashboard-inner .grid-dash.account-balance {
   background-color: green;
   border-color: green;
 }
-
 .dashboard-inner .grid-dash.raffle {
   border-left-color: #248dc1;
 }
-
 .dashboard-inner .grid-dash.raffle h5, .dashboard-inner .grid-dash.raffle .currency {
   color: #248dc1;
 }
-
 .dashboard-inner .grid-dash.transaction {
   border-left-color: red;
 }
-
 .dashboard-inner .grid-dash.transaction h5, .dashboard-inner .grid-dash.transaction .currency {
   color: red;
 }
-
 .dashboard-inner .grid-dash.game-history {
   border-left-color: yellow;
 }
-
 .dashboard-inner .grid-dash.game-history h5, .dashboard-inner .grid-dash.game-history .currency {
   color: yellow;
 }
 
 .side {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
-
 .side h4 {
   text-align: right;
   color: white;
@@ -225,7 +167,6 @@
   font-weight: 500;
   font-size: 14px;
 }
-
 .side .img-con {
   height: 250px;
   max-width: 180px;
@@ -236,7 +177,6 @@
   background-repeat: no-repeat;
   border-radius: 6px;
 }
-
 .side button {
   display: block;
   margin-top: 15px;
@@ -254,26 +194,21 @@
   color: #3DA7DB;
   font-size: 11px;
 }
-
 .below .top {
   font-weight: 500;
   color: white;
 }
-
 .below .top .win {
   color: green;
 }
-
 .below .top .lose {
   color: red;
 }
-
 .below .grand {
   font-size: 28px;
   color: white;
   font-weight: 600;
 }
-
 @media screen and (max-width: 768px) {
   .below {
     text-align: center;
@@ -308,32 +243,26 @@
   padding-right: 30px;
   margin-top: 20px;
 }
-
 .trans-table td, .trans-table th {
   padding: 10px 20px;
   color: white;
   font-size: 13px;
 }
-
 .trans-table td:first-child, .trans-table th:first-child {
   padding-left: 0;
 }
-
 .trans-table td .status, .trans-table th .status {
   font-size: 10px;
   background-color: gray;
   color: white;
   padding: 2px 10px;
 }
-
 .trans-table td .status.lose, .trans-table th .status.lose {
   background-color: red;
 }
-
 .trans-table td .status.win, .trans-table th .status.win {
   background-color: green;
 }
-
 @media screen and (max-width: 768px) {
   .trans-table {
     margin-right: 0;
@@ -347,17 +276,13 @@
     display: block;
   }
   .trans-table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
   .trans-table td, .trans-table th {
     font-size: 9px;
     padding: 10px 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    flex: 1;
     text-align: center;
   }
   .trans-table td .status, .trans-table th .status {
@@ -384,8 +309,7 @@ select, input {
   min-width: 140px;
   font-size: 11px;
   padding: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input {
@@ -398,37 +322,32 @@ input {
 .input-check {
   position: relative;
 }
-
 .input-check .open, .input-check .close {
   position: absolute;
   top: -4px;
   left: 0;
 }
-
 .input-check .open i, .input-check .close i {
   font-size: 20px;
   color: #248dc1;
 }
-
 .input-check .close {
   display: none;
 }
-
 .input-check .close i {
   color: white;
 }
 
-input[type="checkbox"] {
+input[type=checkbox] {
   min-width: unset;
   visibility: hidden;
   position: relative;
 }
-
-input[type="checkbox"]:checked ~ .open {
+input[type=checkbox]:checked ~ .open {
   display: none;
 }
-
-input[type="checkbox"]:checked ~ .close {
+input[type=checkbox]:checked ~ .close {
   display: block;
 }
+
 /*# sourceMappingURL=dashboard.css.map */

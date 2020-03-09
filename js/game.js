@@ -18,7 +18,7 @@ var spinDirection = true; //true for anticlockwise
 var spinStartSpeed = 5; //spin starting speed
 var spinEndSpeed = 5; //spin starting speed
 var spinSpeed = 10; //spin speed
-var revealTimer = 6; //reveal ball timer
+var revealTimer = 2; //reveal ball timer
 
 var prizeTableDisplay = "Score Table"; //score table text display
 var numberTextDisplay = "Your Numbers"; //your score text display
@@ -165,7 +165,7 @@ function buildGameButton() {
 
   buttonSphereStart.cursor = "pointer";
   buttonSphereStart.addEventListener("click", function(evt) {
-    startSpin();
+    playButtonControl();
   });
 
   buttonLeft.cursor = "pointer";
@@ -313,15 +313,14 @@ function startGame() {
     }
   }
 
-  var extraBall = bonusBall == true ? 1 : 0;
-  var totalNum = score_arr.length + extraBall;
+  var totalNum = score_arr.length;
   for (var n = 0; n < totalNum; n++) {
     $.prize["bg" + n].alpha = 1;
     $.prize["bgselect" + n].alpha = 1;
     $.prize["text" + n].color = $.prize["score" + n].color = "#8d6d2c";
   }
 
-  //gameData.revealArray = [12,25,10,3,5,15];
+  gameData.revealArray = [1, 1, 1];
 
   itemBarUser.visible = false;
   buttonSphereStart.visible = true;
@@ -369,18 +368,11 @@ function startSpin() {
   setSelectBalls();
   gameData.spin = true;
 
-  if (gameData.revealArray.length == 0) {
-    var extraBall = bonusBall == true ? 1 : 0;
-    for (var b = 0; b < score_arr.length + extraBall; b++) {
-      gameData.revealArray.push(gameData.numberArray[b]);
-    }
-  }
-
   for (var n = 0; n < gameData.revealArray.length; n++) {
     var currentNumber = gameData.revealArray[n];
 
     for (var p = 0; p < gameData.ballNumber.length; p++) {
-      if (currentNumber == gameData.ballNumber[p].number) {
+      if (currentNumber === gameData.ballNumber[p].number) {
         gameData.ballNumber[p].status = true;
       }
     }
@@ -804,22 +796,11 @@ function revealWinNumber() {
   var tweenNum = gameData.revealArray[gameData.numberNum];
   var revealNum = gameData.revealArray[gameData.numberNum];
 
-  var findBallClone = false;
   for (var p = 0; p < gameData.ballNumber.length; p++) {
-    if (tweenNum == gameData.ballNumber[p].number) {
-      findBallClone = true;
+    if (!gameData.ballNumber[p].status) {
+      gameData.ballNumber[p].status = true;
       tweenNum = gameData.ballNumber[p].index;
       p = gameData.ballNumber.length;
-    }
-  }
-
-  if (!findBallClone) {
-    for (var p = 0; p < gameData.ballNumber.length; p++) {
-      if (!gameData.ballNumber[p].status) {
-        gameData.ballNumber[p].status = true;
-        tweenNum = gameData.ballNumber[p].index;
-        p = gameData.ballNumber.length;
-      }
     }
   }
 
@@ -866,9 +847,7 @@ function revealWinNumber() {
       });
     }
   });
-
-  var extraBall = bonusBall == true ? 1 : 0;
-  if (gameData.numberNum < score_arr.length + extraBall) {
+  if (gameData.numberNum < score_arr.length) {
     beginWinNumberTimer();
   } else {
     endGame();
@@ -883,8 +862,7 @@ function revealWinNumber() {
 function setRevealBalls() {
   ballsRevealContainer.removeAllChildren();
 
-  var extraBall = bonusBall == true ? 1 : 0;
-  var totalBalls = score_arr.length + extraBall;
+  var totalBalls = score_arr.length;
   var totalSplit = Math.floor(totalBalls / 2);
   var spaceX = 65;
   var startX = itemBar.x - spaceX * totalSplit;
