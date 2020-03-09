@@ -17,12 +17,7 @@ function initPreload() {
   });
   resizeGameFunc();
 
-  try {
-    loader = new createjs.LoadQueue(false);
-  } catch (e) {
-    window.location.reload();
-    return;
-  }
+  loader = new createjs.LoadQueue(false);
   manifest = [
     { src: "/assets/bg4.png", id: "bg" },
     { src: "/assets/logo.png", id: "logo" },
