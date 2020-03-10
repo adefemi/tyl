@@ -72,7 +72,26 @@ function navigateLink(val) {
 function resetGameBoard() {
   gameStart = false;
   if (matchChoice.length >= useChoice.length) {
-    console.log(matchChoice, " - ", useChoice);
+    let tyl_box = document.getElementById("tyl-select-win");
+    tyl_box.innerHTML = "";
+    let user_box = document.getElementById("user-select-win");
+    user_box.innerText = "";
+    // load tyl box
+    for (let i = 0; i < matchChoice.length; i++) {
+      let tempBall = document.createElement("div");
+      tempBall.innerText = matchChoice[i];
+      tempBall.classList.add("ballVal");
+      tempBall.classList.add("selected");
+      tyl_box.appendChild(tempBall);
+    }
+    // load tyl box
+    for (let i = 0; i < matchChoice.length; i++) {
+      let tempBall = document.createElement("div");
+      tempBall.innerText = matchChoice[i];
+      tempBall.classList.add("ballVal");
+      tempBall.classList.add("selected");
+      user_box.appendChild(tempBall);
+    }
     window.location.hash = "winModal";
   } else {
     let tyl_box = document.getElementById("tyl-select");

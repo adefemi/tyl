@@ -4,7 +4,7 @@
   margin-top: 40px;
   min-height: 70vh;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .dashboard {
     margin-top: 10px;
   }

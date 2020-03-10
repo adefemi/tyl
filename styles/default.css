@@ -533,12 +533,22 @@ h4 {
 .won-main .won.not {
   color: red;
 }
+@media screen and (max-width: 480px) {
+  .won-main .won {
+    font-size: 25px;
+  }
+}
 .won-main h2 {
   font-weight: bolder;
   font-size: 50px;
   max-width: 100%;
   margin: 0;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 480px) {
+  .won-main h2 {
+    font-size: 22px !important;
+  }
 }
 .won-main .controls button {
   font-size: 20px;
@@ -551,6 +561,13 @@ h4 {
   background-color: transparent;
   border: 2px solid #3DA7DB;
 }
+@media screen and (max-width: 480px) {
+  .won-main .controls button {
+    font-size: 16px;
+    width: 170px;
+    height: 50px;
+  }
+}
 @media screen and (max-width: 768px) {
   .won-main .won {
     font-size: 27px;
@@ -560,7 +577,7 @@ h4 {
   }
   .won-main h2 {
     font-size: 30px;
-    margin-top: 0px;
+    margin-top: 0;
   }
   .won-main p {
     max-width: 100%;
@@ -575,6 +592,15 @@ h4 {
     margin-right: 0;
     background-color: transparent;
     border: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .won-main .won {
+    font-size: 23px;
+    margin-top: 0;
+  }
+  .won-main .controls {
+    transform: scale(0.8);
   }
 }
 

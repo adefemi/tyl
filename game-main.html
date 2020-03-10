@@ -87,34 +87,7 @@
                        <h3>Welcome to TYL, as a new player you get a free game!</h3>
                    </div>
                    <div class="game-box">
-                       <div class="game-con">
-                           <!-- PERCENT LOADER START-->
-                           <div id="mainLoader"><img src="assets/loader.png" /><br><span>0</span></div>
-                           <!-- PERCENT LOADER END-->
 
-                           <!-- CONTENT START-->
-
-                           <!-- BROWSER NOT SUPPORT START-->
-                           <div id="notSupportHolder">
-                               <div class="notSupport">YOUR BROWSER ISN'T SUPPORTED.<br/>PLEASE UPDATE YOUR BROWSER IN ORDER TO RUN THE GAME</div>
-                           </div>
-                           <!-- BROWSER NOT SUPPORT END-->
-
-                           <!-- ROTATE INSTRUCTION START-->
-                           <div id="rotateHolder">
-                               <div class="mobileRotate">
-                                   <div class="rotateDesc">
-                                       <div class="rotateImg"><img src="assets/rotate.png" /></div>
-                                       Rotate your device <br/>to landscape
-                                   </div>
-                               </div>
-                           </div>
-                           <!-- ROTATE INSTRUCTION END-->
-
-                           <!-- CANVAS START-->
-                           <canvas id="gameCanvas" width="600" height="400"></canvas>
-                           <!-- CONTENT END-->
-                       </div>
                        <div class="sider">
                            <div class="input-con">
                                <div class="desktop"><div class="info">Input your lucky number</div></div>
@@ -151,6 +124,34 @@
                                <button id="play">Feeling Lucky</button>
                            </div>
                        </div>
+                       <div class="game-con">
+                           <!-- PERCENT LOADER START-->
+                           <div id="mainLoader"><img src="assets/loader.png" /><br><span>0</span></div>
+                           <!-- PERCENT LOADER END-->
+
+                           <!-- CONTENT START-->
+
+                           <!-- BROWSER NOT SUPPORT START-->
+                           <div id="notSupportHolder">
+                               <div class="notSupport">YOUR BROWSER ISN'T SUPPORTED.<br/>PLEASE UPDATE YOUR BROWSER IN ORDER TO RUN THE GAME</div>
+                           </div>
+                           <!-- BROWSER NOT SUPPORT END-->
+
+                           <!-- ROTATE INSTRUCTION START-->
+                           <div id="rotateHolder">
+                               <div class="mobileRotate">
+                                   <div class="rotateDesc">
+                                       <div class="rotateImg"><img src="assets/rotate.png" /></div>
+                                       Rotate your device <br/>to landscape
+                                   </div>
+                               </div>
+                           </div>
+                           <!-- ROTATE INSTRUCTION END-->
+
+                           <!-- CANVAS START-->
+                           <canvas id="gameCanvas" width="600" height="400"></canvas>
+                           <!-- CONTENT END-->
+                       </div>
                    </div>
                    <div class="mobile">
                        <div class="below">
@@ -160,7 +161,7 @@
                        </div>
                        <br>
                        <center>
-                           <a href="#modalMain"><button class="btn-mobile">Play Now</button></a>
+                           <a href="#modalMain"><button class="btn-mobile play-mob">Play Now</button></a>
                        </center>
                        <br><br>
                    </div>
@@ -316,7 +317,27 @@
                     <div class="main-content won-main">
                         <h2 class="won">You have won</h2>
                         <h2>N10,000</h2>
-                        <br><br>
+                        <br>
+                        <div class="ball-show">
+                            <div class="content-type">
+                                <div class="label-data">TYL selections</div>
+                                <div class="balls-select" id="tyl-select-win">
+                                    <div class="ballVal selected">1</div>
+                                    <div class="ballVal">2</div>
+                                    <div class="ballVal">3</div>
+                                </div>
+                            </div>
+                            -
+                            <div class="content-type">
+                                <div class="label-data">Your selections</div>
+                                <div class="balls-select" id="user-select-win">
+                                    <div class="ballVal selected">9</div>
+                                    <div class="ballVal">5</div>
+                                    <div class="ballVal">4</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
                         <p>
                             You automatically qualify for our daily <br>
                             and weekly raffle draw of
